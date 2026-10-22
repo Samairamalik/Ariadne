@@ -1,0 +1,28 @@
+# secrets and local config
+.env
+*.env
+!.env.example
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+.benchmarks/
+.venv/
+venv/
+
+# node
+node_modules/
+frontend/dist/
+
+# local data, logs, scratch
+backend/data/
+backend/uploads/
+scratch_*.log
+*.log
+hi.pdf
+*.tmp.json
+
+# editor / assistant state
+.vscode/
+.vibe-wise/

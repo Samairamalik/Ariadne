@@ -1,0 +1,1731 @@
+[
+ {
+  "id": "bert-large-params",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 23.4,
+  "answer": "",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-large-params",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 17.2,
+  "answer": "BERTLARGE has 340 million parameters [1].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-vocab",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 3.3,
+  "answer": "BERT uses a vocabulary size of 30,000 tokens [3].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-vocab",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 4.3,
+  "answer": "BERT uses a vocabulary size of 30,000 [3].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-mask",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.1,
+  "answer": "During pre-training, BERT masks 15% of the tokens [1][4].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-mask",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 4.2,
+  "answer": "BERT masks 15% of the tokens during pre-training [1].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-corpora",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 3.6,
+  "answer": "BERT was pre-trained on two corpora: BOOKCORPUS (Zhu et al., 2015) plus English WIKIPEDIA, and CC-NEWS collected from the English portion of the CommonCrawl News dataset (Nagel, 2016) [1].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-corpora",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 5.8,
+  "answer": "BERT was pre-trained on several corpora. The first corpus is BOOKCORPUS (Zhu et al., 2015) plus English WIKIPEDIA, which is the original data used to train BERT and amounts to 16GB of uncompressed text [1]. The second corpus is CC-NEWS, collected from the English portion of the CommonCrawl News dataset crawled between September 2016 and February 2019, containing 63 million English news articles after filtering, totaling 76GB [1]. The third corpus is OPENWEBTEXT, an open-source recreation of the WebText corpus described in Radford et al. (2019), consisting of web content extracted from URLs shared on Reddit with at least three upvotes, amounting to 38GB [1].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-hardware",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 3.1,
+  "answer": "BERT-base was trained on 4 Cloud TPUs in Pod configuration, with a total of 16 TPU chips [1].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-hardware",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 4.1,
+  "answer": "BERT-base was trained on 4 Cloud TPUs in Pod configuration, with a total of 16 TPU chips [1].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "srn-fps",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 2.9,
+  "answer": "SpectralRepNet reaches 80 frames per second (FPS) on the Jetson Nano [2][5].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "srn-fps",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 11.9,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "srn-params",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "srn-params",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "srn-reparam",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "srn-reparam",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "rtts-size",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "rtts-size",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "longformer-window",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "longformer-window",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "bigbird-turing",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "bigbird-turing",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "favor",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "favor",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "sparse-two",
+  "type": "multi",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "sparse-two",
+  "type": "multi",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "three-families",
+  "type": "multi",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "three-families",
+  "type": "multi",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "tradeoffs",
+  "type": "multi",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "tradeoffs",
+  "type": "multi",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "cross-doc-params",
+  "type": "multi",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "cross-doc-params",
+  "type": "multi",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-masking",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-masking",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-nsp",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-nsp",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-data",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-data",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-transformer",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-transformer",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-repvgg",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-repvgg",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-repvgg-train",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-repvgg-train",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "themes",
+  "type": "global",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "themes",
+  "type": "global",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-moon",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-moon",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-france",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-france",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-bread",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-bread",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-mortgage",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-mortgage",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-vocab-contrast",
+  "type": "cross",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-vocab-contrast",
+  "type": "cross",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-adam-beta",
+  "type": "cross",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-adam-beta",
+  "type": "cross",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-heads",
+  "type": "cross",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-heads",
+  "type": "cross",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-repvgg-source",
+  "type": "cross",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-repvgg-source",
+  "type": "cross",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-repvgg-acc",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-repvgg-acc",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-transformer-layers",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 55.9,
+  "answer": "The Transformer encoder stack consists of N = 6 identical layers [1][2].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h-transformer-layers",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 8,
+  "docs": 1,
+  "seconds": 29.4,
+  "answer": "The Transformer encoder stack consists of N = 6 identical layers [2].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h-bert-lr",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 31.6,
+  "answer": "BERT used a learning rate of 1e-4 for pre-training [1].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h-bert-lr",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 29.9,
+  "answer": "",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h-repvgg-speed",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 48.8,
+  "answer": "",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h-repvgg-speed",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 75.3,
+  "answer": "RepVGG runs 83% faster than ResNet-50 on a 1080Ti GPU [1].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h-out-water",
+  "type": "unrelated",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.6,
+  "answer": "The provided documents do not contain enough information to answer this.",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h-out-water",
+  "type": "unrelated",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.6,
+  "answer": "The provided documents do not contain enough information to answer this.",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h-out-football",
+  "type": "unrelated",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.5,
+  "answer": "The provided documents do not contain enough information to answer this.",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h-out-football",
+  "type": "unrelated",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 7.9,
+  "answer": "The provided documents do not contain enough information to answer this.",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-bert-seqlen",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 59.0,
+  "answer": "",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-bert-seqlen",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 20.2,
+  "answer": "",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-dmodel",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 56.3,
+  "answer": "The sub-layers and embedding layers of the Transformer produce outputs of dimension dmodel = 512 [1][2].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-dmodel",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 9,
+  "docs": 2,
+  "seconds": 32.4,
+  "answer": "The sub-layers and embedding layers of the Transformer produce outputs of dimension dmodel = 512 [1][2].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-transformer-gpus",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 18.5,
+  "answer": "The big Transformer model took 3.5 days to train, and it was trained on 8 NVIDIA P100 GPUs [1][2].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-transformer-gpus",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 7,
+  "docs": 2,
+  "seconds": 23.9,
+  "answer": "The big Transformer took 3.5 days to train [1]. It was trained on 8 NVIDIA P100 GPUs [1].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-ihaze",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 36.0,
+  "answer": "SpectralRepNet's transferability was evaluated on the I-HAZE and O-HAZE datasets [1][2].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-ihaze",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 45.5,
+  "answer": "SpectralRepNet's transferability was evaluated on the I-HAZE and O-HAZE datasets [1].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-mamba",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 6,
+  "docs": 3,
+  "seconds": 18.5,
+  "answer": "",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-mamba",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 3,
+  "seconds": 56.0,
+  "answer": "Mamba achieves roughly five times higher inference throughput than a comparable Transformer [1].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-data-size",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 72.4,
+  "answer": "(1) BERT's pre-training corpus was 3.3 billion words in total. This is stated in [1] on page 5, which says \"For the pre-training corpus we use the BooksCorpus (800M words) (Zhu et al., 2015) and English Wikipedia (2,500M words).\" The BooksCorpus contains 800 million words and Wikipedia contains 2,500 million words, so the total corpus size is 800M + 2,500M = 3,300 million words = 3.3 billion words [1].\n\n(2) RoBERTa uses 160 gigabytes of text during pretraining. This is mentioned in [2] on page 7, where it states \"We pretrain our model using 1024 V100 GPUs for approximately one day. Results We present our results in Table 4. When controlling for training data, we observe that RoBERTa provides a large improvement over the originally reported BERTLARGE results, reaffirming the importance of the design choices we explored in Section 4. Finally, we pretrain RoBERTa for significantly longer, increasing the number of pretraining steps from 100K to 300K, and then further to 500K. We again observe significant gains in downstream task performance, and the 300K and 500K step models outperform XLNetLARGE across most tasks. We note that even our longest-trained model does not appear to overfit our data and would likely benefit from additional training. In the rest of the paper, we evaluate our best RoBERTa model on the three different benchmarks: GLUE, SQuaD and RACE. Specifically we consider RoBERTa trained for 500K steps over all five of the datasets introduced in Section 3.2.\" The passage explicitly mentions that RoBERTa is trained over 500K steps using 160GB of text, which is the amount of text data used [2].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-data-size",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 32.5,
+  "answer": "",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-batch",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 18.3,
+  "answer": "(1) BERT used a batch size of 16 or 32 for pre-training, as stated in [1]. \n\n(2) RoBERTa uses a larger batch size, with the option to go up to 32K sequences, as mentioned in [5].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-batch",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 7.6,
+  "answer": "",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "h2-dims",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 5,
+  "docs": 3,
+  "seconds": 30.1,
+  "answer": "(1) The Transformer architecture used in BERT employs L layers, each containing A self-attention heads and a hidden dimension H. The specific values for these dimensions are not fixed and can vary depending on the model size. For example, BERTBASE uses L=12, A=12, and H=768 [1]. [4]\n\n(2) BERT-base uses a hidden size of 768 [1].",
+  "nli": {
+   "claims": 0,
+   "supported": 0,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ }
+]

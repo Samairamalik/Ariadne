@@ -1,0 +1,1186 @@
+[
+ {
+  "id": "bert-large-params",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 20.4,
+  "answer": "BERTLARGE contains 340M parameters [1]."
+ },
+ {
+  "id": "bert-large-params",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 4.1,
+  "answer": "BERTLARGE contains 340M parameters [3]."
+ },
+ {
+  "id": "bert-vocab",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 3.1,
+  "answer": "BERT uses a vocabulary size of 50,000 subword units [1]."
+ },
+ {
+  "id": "bert-vocab",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 4.2,
+  "answer": "BERT uses a vocabulary size of 50,000 subword units [1]."
+ },
+ {
+  "id": "bert-mask",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.1,
+  "answer": "BERT masks 15% of the tokens during pre-training [1][2]."
+ },
+ {
+  "id": "bert-mask",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 4.1,
+  "answer": "BERT masks 15% of the tokens during pre-training [1][4]."
+ },
+ {
+  "id": "bert-corpora",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.3,
+  "answer": "BERT was pre-trained on two corpora: the BooksCorpus [800M words] [6] and Wikipedia [2,500M words] [6]."
+ },
+ {
+  "id": "bert-corpora",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 4.2,
+  "answer": "BERT was pre-trained on two corpora: the BooksCorpus (800M words) [9] and Wikipedia (2,500M words) [9]."
+ },
+ {
+  "id": "bert-hardware",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.6,
+  "answer": "BERT-base was trained on 4 Cloud TPUs in Pod configuration, with a total of 16 TPU chips. This information is provided in [1] on the first paragraph under \"Training of BERTBASE was performed on 4 Cloud TPUs in Pod configuration (16 TPU chips total).\""
+ },
+ {
+  "id": "bert-hardware",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 4.2,
+  "answer": "BERT-base was trained on 4 Cloud TPUs in Pod configuration, with a total of 16 TPU chips [1]."
+ },
+ {
+  "id": "srn-fps",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.2,
+  "answer": "SpectralRepNet reaches 80 FPS on the Jetson Nano [2][5]."
+ },
+ {
+  "id": "srn-fps",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 7,
+  "docs": 1,
+  "seconds": 3.9,
+  "answer": "SpectralRepNet reaches 80 frames per second (FPS) on the Jetson Nano, as reported in [2]."
+ },
+ {
+  "id": "srn-params",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 2.8,
+  "answer": "SpectralRepNet has 0.38 million parameters [2][3]."
+ },
+ {
+  "id": "srn-params",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 9,
+  "docs": 1,
+  "seconds": 3.7,
+  "answer": "SpectralRepNet has 0.38 million parameters [5]."
+ },
+ {
+  "id": "srn-reparam",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.2,
+  "answer": "Reparameterization speeds up inference in SpectralRepNet by 19.7% [1][2]."
+ },
+ {
+  "id": "srn-reparam",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 4.1,
+  "answer": "Reparameterization speeds up inference in SpectralRepNet by 19.7% [7][8]."
+ },
+ {
+  "id": "rtts-size",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 2.9,
+  "answer": "The RTTS test set contains 4,322 real hazy images [6]."
+ },
+ {
+  "id": "rtts-size",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.1,
+  "answer": "The RTTS test set contains 4,322 real hazy images [1]."
+ },
+ {
+  "id": "longformer-window",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 4,
+  "seconds": 3.0,
+  "answer": "Longformer uses a sliding window pattern with a window size of 512 tokens [1]."
+ },
+ {
+  "id": "longformer-window",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 4,
+  "seconds": 3.2,
+  "answer": "Longformer uses a sliding window pattern with a window size of 512 tokens [1]."
+ },
+ {
+  "id": "bigbird-turing",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 4,
+  "seconds": 3.1,
+  "answer": "BigBird is Turing complete, as stated in [1]."
+ },
+ {
+  "id": "bigbird-turing",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 4,
+  "seconds": 3.1,
+  "answer": "Yes, BigBird is Turing complete [1]."
+ },
+ {
+  "id": "favor",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 4,
+  "seconds": 3.8,
+  "answer": "FAVOR+ is a method used by Performer to approximate the softmax kernel with positive orthogonal random features [1]. It provides an unbiased estimate of the attention matrix without materializing it, with the approximation error depending on the number of random features used [1]. The method of FAVOR+ is employed by Performer, which is an efficient attention mechanism [1]."
+ },
+ {
+  "id": "favor",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 4,
+  "seconds": 3.5,
+  "answer": "FAVOR+ is a method that approximates the softmax kernel with positive orthogonal random features, allowing for an unbiased estimate of the attention matrix without materializing it [1]. The method that uses FAVOR+ is Performer [1]."
+ },
+ {
+  "id": "sparse-two",
+  "type": "multi",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 4.0,
+  "answer": "Longformer uses a sliding window pattern in which each token attends only to its neighbors within a window of 512 tokens [2]. This restricts the number of computed scores to grow linearly rather than quadratically with sequence length, reducing the attention cost [2].\n\nBigBird combines a sliding window, global tokens, and randomly chosen connections between positions. The sliding window limits each token's attention to a subset of nearby positions, while global tokens and random connections allow information to propagate beyond the window [1]. This sparse mechanism keeps the expressive power of full attention while using only linear memory and linear attention cost [1]."
+ },
+ {
+  "id": "sparse-two",
+  "type": "multi",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 4.3,
+  "answer": "Longformer uses a sliding window pattern, where each token attends only to its neighbors within a window of 512 tokens [2]. This restricts the number of computed scores to grow linearly rather than quadratically, reducing the attention cost [2].\n\nBigBird combines a sliding window, a set of global tokens, and randomly chosen connections between positions [1]. The sliding window pattern allows each token to attend only to its neighbors within a window, limiting the attention cost [1]. Additionally, the presence of global tokens and random connections between positions further reduces the attention cost while maintaining expressive power [1]."
+ },
+ {
+  "id": "three-families",
+  "type": "multi",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 4.4,
+  "answer": "The three families of remedies for quadratic attention cost are sparse attention, linear attention, and state space models [1]. \n\nSparse attention restricts each token to attend only to a small subset of positions, such as a sliding window of neighboring tokens [2]. This limits the number of computed scores to grow linearly with sequence length rather than quadratically. \n\nLinear attention replaces the softmax attention computation with a kernel feature map, allowing the dot products of queries and keys to be computed in linear time in sequence length [3]. Performer uses positive orthogonal random features to approximate the softmax kernel without materializing the full attention matrix. \n\nState space models represent sequences implicitly as a process evolving over time, allowing information to propagate through the sequence implicitly rather than explicitly attending to all positions [1]. This enables efficient modeling of long-range dependencies."
+ },
+ {
+  "id": "three-families",
+  "type": "multi",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 4.0,
+  "answer": "The three families of remedies for quadratic attention cost are sparse attention, linear attention, and state space models [1]. \n\nSparse attention restricts each token to attend only to a small subset of positions, such as a sliding window of neighboring tokens [2]. This limits the number of computed scores to grow linearly with sequence length rather than quadratically. \n\nLinear attention replaces the softmax attention computation with a kernel feature map, allowing the dot products of queries and keys to be computed in linear time in sequence length [3]. Performer uses positive orthogonal random features to approximate the softmax kernel without materializing the full attention matrix. \n\nState space models represent sequences implicitly as a process evolving over time, allowing information to propagate through the sequence implicitly rather than explicitly attending to all positions [1]. This enables efficient modeling of long-range dependencies."
+ },
+ {
+  "id": "tradeoffs",
+  "type": "multi",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 6.3,
+  "answer": "Sparse attention, linear attention, and state space models each have different trade-offs in terms of computational complexity, scalability, and expressiveness:\n\nSparse attention restricts each token to attend to only a small subset of positions, resulting in linear memory usage and linear growth of computed scores with sequence length [4][2]. This makes sparse attention more memory-efficient and scalable to long sequences compared to standard quadratic attention. However, the limited receptive field may cause loss of accuracy on tasks that require precise recall of distant dependencies [5].\n\nLinear attention, such as Mamba's selective state space models, processes the sequence with a recurrence that carries a fixed-size hidden state. The cost scales linearly with sequence length, offering higher inference throughput than comparable Transformers [3][5]. However, linear attention may struggle with tasks that need to precisely recall distant information, as the hidden state can only retain a limited amount of context [5].\n\nState space models, like Mamba, also process sequences with a recurrence but with the state space parameters being functions of the input. This selective state space design allows the model to decide what to remember or forget at each step, potentially improving performance [3][5]. State space models achieve roughly five times higher inference throughput than a comparable Transformer [3]. However, the trade-off is that they may not be as expressive as full attention mechanisms, which can capture more complex relationships between tokens [5].\n\nIn summary, sparse attention offers memory efficiency and scalability at the cost of potential loss of accuracy for tasks requiring precise long-range recall [4][2]. Linear attention provides higher throughput for long sequences but may struggle with tasks needing to recall distant information accurately [5]. State space models achieve high throughput and some selective memory management but may sacrifice expressiveness compared to full attention mechanisms [3][5]. The choice among these approaches depends on the specific requirements of the task, such as the need for precise long-range recall versus computational efficiency and scalability."
+ },
+ {
+  "id": "tradeoffs",
+  "type": "multi",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 8,
+  "docs": 2,
+  "seconds": 5.4,
+  "answer": "Sparse attention, linear attention, and state space models each have different trade-offs:\n\nSparse attention:\n- Restricts each token to a small subset of positions, causing the number of computed scores to grow linearly rather than quadratically [5].\n- Keeps the expressive power of full attention while using only linear memory [5].\n- Can be Turing complete, maintaining the same expressive power as full attention [5].\n\nLinear attention:\n- Replaces the softmax with a kernel feature map, allowing the product of queries and keys to be computed in time linear in n [7].\n- Attracts interest for very long inputs but can lose accuracy on tasks that need precise recall [1].\n- The total computational cost is similar to that of single-head attention with full dimensionality [7].\n\nState space models:\n- Process a sequence with a recurrence that carries a fixed-size hidden state, causing the cost to scale linearly with length [3].\n- Make the state space parameters functions of the input, allowing the model to decide what to remember or forget at each step [3].\n- Report roughly five times higher inference throughput than a comparable Transformer [3]."
+ },
+ {
+  "id": "cross-doc-params",
+  "type": "multi",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 4.3,
+  "answer": "SpectralRepNet uses 21 times fewer parameters compared to BERT. BERTBASE has 110M parameters while BERTLARGE has 340M parameters [2]. SpectralRepNet's setup compares it favorably against lightweight methods on RESIDE-6K dataset, noting it uses 21 times fewer parameters [1]. Therefore, SpectralRepNet has significantly fewer parameters than BERT, with BERTBASE having 110M parameters and BERTLARGE having 340M parameters [2]."
+ },
+ {
+  "id": "cross-doc-params",
+  "type": "multi",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 9,
+  "docs": 2,
+  "seconds": 4.3,
+  "answer": "BERTBASE has 110 million parameters, while SpectralRepNet has 0.38 million parameters [2][8]."
+ },
+ {
+  "id": "x-masking",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 4.4,
+  "answer": "RoBERTa changed the masking strategy used by BERT in several ways:\n1. RoBERTa uses dynamic masking, where the masking pattern is changed dynamically during training, whereas BERT used a fixed masking pattern [1][2].\n2. RoBERTa replaces 15% of the tokens with the [MASK] token, while BERT used a different masking strategy with 80% replaced with [MASK], 10% left unchanged, and 10% replaced with a random token [2].\n3. RoBERTa dynamically changes the masking pattern applied to the training data, whereas BERT used a static masking approach [1]."
+ },
+ {
+  "id": "x-masking",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 9,
+  "docs": 2,
+  "seconds": 4.1,
+  "answer": "RoBERTa changed the masking strategy used by BERT by dynamically changing the masking pattern applied to the training data [8]."
+ },
+ {
+  "id": "x-nsp",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 3.5,
+  "answer": "No, RoBERTa does not keep the next sentence prediction objective that BERT introduced. RoBERTa removes the next sentence prediction (NSP) loss and trains only on masked language modeling (MLM) [1][2]."
+ },
+ {
+  "id": "x-nsp",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 8,
+  "docs": 2,
+  "seconds": 4.4,
+  "answer": "No, RoBERTa does not keep the next sentence prediction objective that BERT introduced. RoBERTa removes the next sentence prediction (NSP) loss and trains the model on a larger dataset without it [2][5]."
+ },
+ {
+  "id": "x-data",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.7,
+  "answer": "RoBERTa uses 160GB of training text, while the original BERT used 16GB of training text [1][3]. Therefore, RoBERTa uses 160GB - 16GB = 144GB more training text than the original BERT [1][3]."
+ },
+ {
+  "id": "x-data",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 4.7,
+  "answer": "RoBERTa uses 160GB of training text, while the original BERT used 16GB [8][3]. Therefore, RoBERTa uses 160GB - 16GB = 144GB more training text than the original BERT [8][3]."
+ },
+ {
+  "id": "x-transformer",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 3.9,
+  "answer": "BERT is based on the Transformer architecture introduced by Vaswani et al. (2017). The Transformer architecture uses self-attention mechanisms to compute relationships between all tokens in a sequence. In BERT, each block consists of L layers, each containing A self-attention heads and a hidden dimension H. The self-attention computation allows BERT to consider both left and right context for each token across all layers, enabling it to capture bidirectional relationships in the text [3][6]."
+ },
+ {
+  "id": "x-transformer",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 5.0,
+  "answer": "BERT is based on the Transformer architecture described in Vaswani et al. (2017) [3]. The Transformer uses a multi-layer bidirectional encoder with self-attention mechanisms to compute attention [3][8]. Specifically, BERT uses a transformer architecture with L layers, each block using A self-attention heads and hidden dimension H [4]. The self-attention mechanism in BERT allows it to model bidirectional context by attending to both left and right context in all layers [3][8]."
+ },
+ {
+  "id": "x-repvgg",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.5,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "x-repvgg",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 6.4,
+  "answer": "SpectralRepNet uses the structural re-parameterization technique introduced by RepVGG by incorporating the RepVGGBlock into its architecture. The RepVGGBlock is a training-time multi-branch architecture that combines identity and 1\u00d71 branches with a 3\u00d73 convolution and batch normalization layers [7][9]. In SpectralRepNet, the RepVGGBlock is applied in each stage of the encoder, followed by max pooling, and the channel count grows as 3, 32, 64, 128 [7]. This allows SpectralRepNet to achieve a lightweight real-time dehazing network with only 0.38M parameters and 4.48 GFLOPs, while still achieving high performance on benchmarks like RESIDE-6K [10]. The use of structural re-parameterization enables SpectralRepNet to be efficient on edge hardware like the NVIDIA Jetson Nano, achieving real-time speed with 80 FPS [8]."
+ },
+ {
+  "id": "x-repvgg-train",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.7,
+  "answer": "During training, the RepVGG paper uses both identity and 1\u00d71 branches in addition to the main 3\u00d73 convolutional layers [1][4]. However, at inference time, these branches are removed through a structural re-parameterization technique, which converts the training-time multi-branch topology into a single 3\u00d73 convolution layer for faster inference on generic computing devices like GPUs [1][4]."
+ },
+ {
+  "id": "x-repvgg-train",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 4.7,
+  "answer": "The RepVGG paper uses both identity and 1\u00d71 branches during training [1][4]. However, at inference time, these branches are removed via structural re-parameterization, so the model consists of a stack of 3 \u00d7 3 conv layers followed by ReLU [1][2][4]."
+ },
+ {
+  "id": "themes",
+  "type": "global",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": null,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.5,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "themes",
+  "type": "global",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 4,
+  "seconds": 5.1,
+  "answer": "The main themes across these documents are:\n\n1. Efficient attention mechanisms in deep learning models, particularly Transformers, which allow for significant parallelization and improved performance without the quadratic growth in compute and memory that comes with traditional attention mechanisms [1].\n2. Pre-training deep bidirectional Transformers for language understanding tasks, such as the BERT model, which uses masked language modeling and next sentence prediction objectives to learn contextual token representations [2][5].\n3. Comparing different training formats for BERT, including static vs. dynamic masking and whether to allow sequences to come from a single document or multiple documents, with results showing that using dynamic masking and allowing sequences from a single document (DOC-SENTENCES) can outperform the original BERTBASE results and downstream task performance [3][4].\n4. The shift away from recurrence in model architecture, with Transformers relying entirely on attention mechanisms to capture global dependencies between input and output sequences, allowing for more parallelization and potentially better performance [4]."
+ },
+ {
+  "id": "out-moon",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.5,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "out-moon",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.3,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "out-france",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.4,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "out-france",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.5,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "out-bread",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.4,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "out-bread",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.4,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "out-mortgage",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.3,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "out-mortgage",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.3,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "h-vocab-contrast",
+  "type": "cross",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 4.0,
+  "answer": "RoBERTa uses a larger byte-level Byte Pair Encoding (BPE) vocabulary compared to BERT. While BERT uses a character-level BPE vocabulary of size 30K learned after preprocessing the input, RoBERTa uses a byte-level BPE vocabulary containing 50K subword units without any additional preprocessing or tokenization of the input [1][3]. This change in vocabulary size and type is one of the key modifications RoBERTa makes compared to BERT [1][3]."
+ },
+ {
+  "id": "h-vocab-contrast",
+  "type": "cross",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 4.3,
+  "answer": "RoBERTa uses a larger byte-level BPE vocabulary containing 50K subword units, while BERT uses a character-level BPE vocabulary of size 30K [1][7]."
+ },
+ {
+  "id": "h-adam-beta",
+  "type": "cross",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.4,
+  "answer": "RoBERTa changed the Adam beta2 value from 0.999 in BERT to 0.999 for pre-training [1][4]."
+ },
+ {
+  "id": "h-adam-beta",
+  "type": "cross",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 4.7,
+  "answer": "The BERT paper [8] states that BERT used Adam optimizer with \u03b22 = 0.999 for pre-training. RoBERTa, as described in the RoBERTa paper [2], changed this value to \u03b22 = 0.99 for pre-training."
+ },
+ {
+  "id": "h-heads",
+  "type": "cross",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 3,
+  "seconds": 3.8,
+  "answer": "The original Transformer architecture, as described in [6], uses A self-attention heads and hidden dimension H per Transformer block. \n\nIn BERT-base, as described in [1], the model parameters are specified as L=12 (number of layers), H=768 (hidden size), and A=12 (number of attention heads). Therefore, BERT-base uses 12 attention heads, which matches the original Transformer's A parameter [1]."
+ },
+ {
+  "id": "h-heads",
+  "type": "cross",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 7,
+  "docs": 3,
+  "seconds": 4.7,
+  "answer": "The original Transformer architecture, as described in [6], uses a configurable number of attention heads (A) and hidden dimension (H), while keeping the amount of computation constant. However, the exact number of attention heads used in the original Transformer is not specified in this source.\n\nOn the other hand, BERT-base, as described in [2], uses 12 attention heads (A=12) along with a hidden size (H) of 768 and 12 layers (L=12). Therefore, BERT-base uses 12 attention heads [2]."
+ },
+ {
+  "id": "h-repvgg-source",
+  "type": "cross",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": true,
+   "citations": false
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.3,
+  "answer": "The paper that introduced the reparameterization idea that SpectralRepNet builds on is  (RepVGG). This is cited in Section I. INTRODUCTION > B. Structural Reparameterization of the provided document."
+ },
+ {
+  "id": "h-repvgg-source",
+  "type": "cross",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.6,
+  "answer": "The reparameterization idea was introduced in the paper RepVGG [6]."
+ },
+ {
+  "id": "h-repvgg-acc",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.4,
+  "answer": "RepVGG reaches over 80% top-1 accuracy on ImageNet [1][2]."
+ },
+ {
+  "id": "h-repvgg-acc",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 4.5,
+  "answer": "RepVGG reaches over 80% top-1 accuracy on ImageNet [3][8]."
+ },
+ {
+  "id": "h-transformer-layers",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 3.0,
+  "answer": "The Transformer encoder stack consists of N = 6 identical layers [1][3]."
+ },
+ {
+  "id": "h-transformer-layers",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 8,
+  "docs": 2,
+  "seconds": 3.7,
+  "answer": "The Transformer encoder stack consists of N = 6 identical layers [1]."
+ },
+ {
+  "id": "h-bert-lr",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.1,
+  "answer": "The learning rate used for BERT pre-training was 1e-4 [1]."
+ },
+ {
+  "id": "h-bert-lr",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 4.1,
+  "answer": "BERT used a learning rate of 1e-4 for pre-training [1]."
+ },
+ {
+  "id": "h-repvgg-speed",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.5,
+  "answer": "RepVGG runs 83% faster than ResNet-50 on a 1080Ti GPU [1]."
+ },
+ {
+  "id": "h-repvgg-speed",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 4.5,
+  "answer": "RepVGG runs 83% faster than ResNet-50 on a 1080Ti GPU [1]."
+ },
+ {
+  "id": "h-out-water",
+  "type": "unrelated",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.5,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "h-out-water",
+  "type": "unrelated",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.4,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "h-out-football",
+  "type": "unrelated",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.5,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "h-out-football",
+  "type": "unrelated",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.4,
+  "answer": "The provided documents do not contain enough information to answer this."
+ }
+]

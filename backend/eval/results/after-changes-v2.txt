@@ -1,0 +1,122 @@
+
+==================== DEV SET (27 questions) ====================
+PASS RATE by question type (pass/total)   plain -> graph
+
+gate
+  lookup      12/12 ->  12/12
+  multi         4/4 ->    4/4
+  cross         6/6 ->    6/6
+  global        0/1 ->    1/1
+  unrelated     4/4 ->    4/4
+
+evidence
+  lookup      12/12 ->  12/12
+  multi         2/4 ->    3/4
+  cross         3/6 ->    4/6
+
+keywords
+  lookup      11/12 ->  11/12
+  multi         3/4 ->    4/4
+  cross         5/6 ->    3/6
+  global        0/1 ->    0/1
+
+citations
+  lookup      12/12 ->  12/12
+  multi         4/4 ->    4/4
+  cross         6/6 ->    6/6
+  global        0/1 ->    1/1
+
+FULLY CORRECT (every applicable check passes)
+  graph=False 20/27
+  graph=True  21/27
+
+CONTEXT SIZE / LATENCY (mean, excluding unrelated)
+  graph=False sources=5.7 docs=1.8 seconds=4.3
+  graph=True  sources=8.7 docs=2.1 seconds=4.5
+
+==================== HELDOUT SET (10 questions) ====================
+PASS RATE by question type (pass/total)   plain -> graph
+
+gate
+  lookup        4/4 ->    4/4
+  cross         4/4 ->    4/4
+  unrelated     2/2 ->    2/2
+
+evidence
+  lookup        4/4 ->    4/4
+  cross         0/4 ->    1/4
+
+keywords
+  lookup        4/4 ->    4/4
+  cross         2/4 ->    3/4
+
+citations
+  lookup        4/4 ->    4/4
+  cross         4/4 ->    4/4
+
+FULLY CORRECT (every applicable check passes)
+  graph=False 6/10
+  graph=True  7/10
+
+CONTEXT SIZE / LATENCY (mean, excluding unrelated)
+  graph=False sources=6.0 docs=1.5 seconds=3.5
+  graph=True  sources=10.0 docs=1.6 seconds=5.9
+
+==================== HELDOUT2 SET (12 questions) ====================
+PASS RATE by question type (pass/total)   plain -> graph
+
+gate
+  lookup        5/5 ->    5/5
+  cross         5/5 ->    5/5
+  unrelated     2/2 ->    2/2
+
+evidence
+  lookup        5/5 ->    5/5
+  cross         3/5 ->    3/5
+
+keywords
+  lookup        5/5 ->    5/5
+  cross         2/5 ->    2/5
+
+citations
+  lookup        5/5 ->    5/5
+  cross         4/5 ->    5/5
+
+FULLY CORRECT (every applicable check passes)
+  graph=False 8/12
+  graph=True  9/12
+
+CONTEXT SIZE / LATENCY (mean, excluding unrelated)
+  graph=False sources=6.0 docs=1.9 seconds=3.6
+  graph=True  sources=8.7 docs=2.0 seconds=4.4
+
+FAILURES
+  [dev] bert-corpora         graph=False failed=['keywords']
+  [dev] bert-corpora         graph=True  failed=['keywords']
+  [dev] three-families       graph=False failed=['evidence']
+  [dev] three-families       graph=True  failed=['evidence']
+  [dev] cross-doc-params     graph=False failed=['evidence', 'keywords']
+  [dev] x-masking            graph=False failed=['evidence']
+  [dev] x-masking            graph=True  failed=['evidence', 'keywords']
+  [dev] x-transformer        graph=False failed=['evidence', 'keywords']
+  [dev] x-transformer        graph=True  failed=['evidence', 'keywords']
+  [dev] x-repvgg             graph=False failed=['evidence']
+  [dev] x-repvgg             graph=True  failed=['keywords']
+  [dev] themes               graph=False failed=['gate', 'keywords', 'citations']
+  [dev] themes               graph=True  failed=['keywords']
+  [heldout] h-vocab-contrast     graph=False failed=['evidence']
+  [heldout] h-adam-beta          graph=False failed=['evidence', 'keywords']
+  [heldout] h-adam-beta          graph=True  failed=['evidence', 'keywords']
+  [heldout] h-heads              graph=False failed=['evidence', 'keywords']
+  [heldout] h-heads              graph=True  failed=['evidence']
+  [heldout] h-repvgg-source      graph=False failed=['evidence']
+  [heldout] h-repvgg-source      graph=True  failed=['evidence']
+  [heldout2] h2-data-size         graph=False failed=['evidence', 'keywords']
+  [heldout2] h2-data-size         graph=True  failed=['evidence', 'keywords']
+  [heldout2] h2-dims              graph=False failed=['evidence', 'keywords']
+  [heldout2] h2-dims              graph=True  failed=['evidence', 'keywords']
+  [heldout2] h2-speed             graph=False failed=['citations']
+  [heldout2] h2-cost-then-attention graph=False failed=['keywords']
+  [heldout2] h2-cost-then-attention graph=True  failed=['keywords']
+
+saved D:\Work\AARIADNE-NEW\backend\eval\results\eval-20261019-181845.json

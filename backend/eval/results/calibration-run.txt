@@ -1,0 +1,25 @@
+1810.04805v2.pdf       threshold=0.0  (raw p5=2.352528464794159, min=2.163389205932617, median=5.983460903167725, max=8.43482494354248, 18/18 questions scored)
+   e.g.
+     What is the main difference between BERT and recent language representation models like Peters et al. (2018a) and Radford et al. (2018)?
+     How does BERT pre-train deep bidirectional representations from unlabeled text?
+avssfianal.pdf         threshold=-0.639824143052101  (raw p5=-0.639824143052101, min=-5.117384433746338, median=4.265863418579102, max=8.550138473510742, 19/19 questions scored)
+   e.g.
+     What is the main contribution of the paper?
+     Why do recent deep learning-based dehazing techniques not suit edge deployment on embedded devices?
+survey.pdf             threshold=0.0  (raw p5=3.9713838577270506, min=3.4387497901916504, median=7.738561153411865, max=8.071548461914062, 5/5 questions scored)
+Ollama failed on default device (model runner has unexpectedly stopped, this may be due to resource limitations or an internal error, check ollama server); retrying on CPU
+   e.g.
+     How does self-attention enable Transformers to model sequences but also lead to quadratic growth in compute and memory with sequence length?
+     What is the main idea behind sparse attention and how does it address the quadratic growth in compute and memory?
+ROBERTA.pdf            threshold=0.0  (raw p5=2.378832733631134, min=2.0481173992156982, median=6.184674263000488, max=8.187732696533203, 20/20 questions scored)
+   e.g.
+     Which document search system was used to evaluate the performance of the BERT model presented in the paper?
+     What is the primary objective of the masked language model (MLM) training procedure in BERT?
+REPVGGPAP.pdf          threshold=0.0  (raw p5=2.278343689441681, min=1.2516708374023438, median=5.269533395767212, max=7.508371829986572, 20/20 questions scored)
+   e.g.
+     What are the drawbacks of using complicated ConvNets compared to simpler ones?
+     Why do some components in modern ConvNets increase memory access cost and limit device support?
+attentionisallyouneed.pdf threshold=0.0  (raw p5=0.057905723154544876, min=-0.559708833694458, median=6.415937662124634, max=8.764598846435547, 20/20 questions scored)
+   e.g.
+     What is the main innovation of the Transformer model proposed in this paper?
+     How does the Transformer architecture differ from traditional sequence transduction models that use encoders and decoders?

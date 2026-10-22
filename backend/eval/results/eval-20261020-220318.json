@@ -1,0 +1,1758 @@
+[
+ {
+  "id": "bert-large-params",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 12.6,
+  "answer": "BERTLARGE has 340 million parameters [1][2].",
+  "nli": {
+   "claims": 1,
+   "supported": 1,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-large-params",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 4.6,
+  "answer": "BERTLARGE has 340 million parameters [2].",
+  "nli": {
+   "claims": 1,
+   "supported": 0,
+   "unverified": 1,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-vocab",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 3.5,
+  "answer": "BERT uses a vocabulary size of 30,000 tokens [3].",
+  "nli": {
+   "claims": 1,
+   "supported": 1,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-vocab",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 4.6,
+  "answer": "BERT uses a vocabulary size of 30,000 [3].",
+  "nli": {
+   "claims": 1,
+   "supported": 1,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-mask",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.5,
+  "answer": "During pre-training, BERT masks 15% of the tokens [1][4].",
+  "nli": {
+   "claims": 1,
+   "supported": 0,
+   "unverified": 1,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-mask",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 4.3,
+  "answer": "BERT masks 15% of the tokens during pre-training [1].",
+  "nli": {
+   "claims": 1,
+   "supported": 0,
+   "unverified": 1,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-corpora",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 3.8,
+  "answer": "BERT was pre-trained on two corpora: BOOKCORPUS (Zhu et al., 2015) plus English WIKIPEDIA, and CC-NEWS collected from the English portion of the CommonCrawl News dataset (Nagel, 2016) [1].",
+  "nli": {
+   "claims": 1,
+   "supported": 0,
+   "unverified": 1,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-corpora",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 4.8,
+  "answer": "BERT was pre-trained on two corpora: BOOKCORPUS (Zhu et al., 2015) plus English WIKIPEDIA, and the CC-NEWS corpus collected from the English portion of the CommonCrawl News dataset (Nagel, 2016) [5].",
+  "nli": {
+   "claims": 1,
+   "supported": 0,
+   "unverified": 1,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-hardware",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 3.3,
+  "answer": "BERT-base was trained on 4 Cloud TPUs in Pod configuration, with a total of 16 TPU chips [1].",
+  "nli": {
+   "claims": 1,
+   "supported": 0,
+   "unverified": 1,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "bert-hardware",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 4.5,
+  "answer": "BERT-base was trained on 4 Cloud TPUs in Pod configuration, with a total of 16 TPU chips [1].",
+  "nli": {
+   "claims": 1,
+   "supported": 0,
+   "unverified": 1,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "srn-fps",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.5,
+  "answer": "SpectralRepNet reaches 80 frames per second (FPS) on the Jetson Nano [2][5].",
+  "nli": {
+   "claims": 1,
+   "supported": 1,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "srn-fps",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 3.9,
+  "answer": "SpectralRepNet reaches 80 FPS on the Jetson Nano [5].",
+  "nli": {
+   "claims": 1,
+   "supported": 1,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "srn-params",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.2,
+  "answer": "SpectralRepNet has 0.38 million parameters [2][4].",
+  "nli": {
+   "claims": 1,
+   "supported": 1,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "srn-params",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 4.1,
+  "answer": "SpectralRepNet has 0.38 million parameters [4][6].",
+  "nli": {
+   "claims": 1,
+   "supported": 1,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "srn-reparam",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.6,
+  "answer": "Reparameterization speeds up inference in SpectralRepNet by 19.7% [1][2].",
+  "nli": {
+   "claims": 1,
+   "supported": 1,
+   "unverified": 0,
+   "contradicted": 0,
+   "conflicting": 0
+  }
+ },
+ {
+  "id": "srn-reparam",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 4.3,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "rtts-size",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "rtts-size",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "longformer-window",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "longformer-window",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "bigbird-turing",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "bigbird-turing",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "favor",
+  "type": "lookup",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "favor",
+  "type": "lookup",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "sparse-two",
+  "type": "multi",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "sparse-two",
+  "type": "multi",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "three-families",
+  "type": "multi",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "three-families",
+  "type": "multi",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "tradeoffs",
+  "type": "multi",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "tradeoffs",
+  "type": "multi",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "cross-doc-params",
+  "type": "multi",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "cross-doc-params",
+  "type": "multi",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-masking",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-masking",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-nsp",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-nsp",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-data",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-data",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-transformer",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-transformer",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-repvgg",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-repvgg",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-repvgg-train",
+  "type": "cross",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "x-repvgg-train",
+  "type": "cross",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "themes",
+  "type": "global",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "themes",
+  "type": "global",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-moon",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-moon",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-france",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-france",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-bread",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-bread",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-mortgage",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "out-mortgage",
+  "type": "unrelated",
+  "split": "dev",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-vocab-contrast",
+  "type": "cross",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-vocab-contrast",
+  "type": "cross",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-adam-beta",
+  "type": "cross",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-adam-beta",
+  "type": "cross",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-heads",
+  "type": "cross",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-heads",
+  "type": "cross",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-repvgg-source",
+  "type": "cross",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-repvgg-source",
+  "type": "cross",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-repvgg-acc",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-repvgg-acc",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-transformer-layers",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-transformer-layers",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-bert-lr",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-bert-lr",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-repvgg-speed",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-repvgg-speed",
+  "type": "lookup",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-out-water",
+  "type": "unrelated",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-out-water",
+  "type": "unrelated",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-out-football",
+  "type": "unrelated",
+  "split": "heldout",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h-out-football",
+  "type": "unrelated",
+  "split": "heldout",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-bert-seqlen",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-bert-seqlen",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-dmodel",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-dmodel",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-transformer-gpus",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-transformer-gpus",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-ihaze",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-ihaze",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-mamba",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-mamba",
+  "type": "lookup",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-data-size",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-data-size",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-batch",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-batch",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-dims",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-dims",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-speed",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-speed",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-cost-then-attention",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-cost-then-attention",
+  "type": "cross",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-out-vaccine",
+  "type": "unrelated",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-out-vaccine",
+  "type": "unrelated",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-out-mountain",
+  "type": "unrelated",
+  "split": "heldout2",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.2,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ },
+ {
+  "id": "h2-out-mountain",
+  "type": "unrelated",
+  "split": "heldout2",
+  "graph": true,
+  "judged": {
+   "gate": false,
+   "evidence": false,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 8.1,
+  "answer": null,
+  "error": "ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it"
+ }
+]

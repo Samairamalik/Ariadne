@@ -1,0 +1,110 @@
+  done bert-large-params graph=False
+  done bert-large-params graph=True
+  done bert-vocab graph=False
+  done bert-vocab graph=True
+  done bert-mask graph=False
+  done bert-mask graph=True
+  done bert-corpora graph=False
+  done bert-corpora graph=True
+  done bert-hardware graph=False
+  done bert-hardware graph=True
+  done srn-fps graph=False
+  ERROR srn-fps graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR srn-params graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR srn-params graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR srn-reparam graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR srn-reparam graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR rtts-size graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR rtts-size graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR longformer-window graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR longformer-window graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR bigbird-turing graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR bigbird-turing graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR favor graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR favor graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR sparse-two graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR sparse-two graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR three-families graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR three-families graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR tradeoffs graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR tradeoffs graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR cross-doc-params graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR cross-doc-params graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR x-masking graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR x-masking graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR x-nsp graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR x-nsp graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR x-data graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR x-data graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR x-transformer graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR x-transformer graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR x-repvgg graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR x-repvgg graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR x-repvgg-train graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR x-repvgg-train graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR themes graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR themes graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR out-moon graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR out-moon graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR out-france graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR out-france graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR out-bread graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR out-bread graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR out-mortgage graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR out-mortgage graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h-vocab-contrast graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h-vocab-contrast graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h-adam-beta graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h-adam-beta graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h-heads graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h-heads graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h-repvgg-source graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h-repvgg-source graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h-repvgg-acc graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h-repvgg-acc graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  done h-transformer-layers graph=False
+  done h-transformer-layers graph=True
+  done h-bert-lr graph=False
+  done h-bert-lr graph=True
+  done h-repvgg-speed graph=False
+  done h-repvgg-speed graph=True
+  done h-out-water graph=False
+  done h-out-water graph=True
+  done h-out-football graph=False
+  done h-out-football graph=True
+  done h2-bert-seqlen graph=False
+  done h2-bert-seqlen graph=True
+  done h2-dmodel graph=False
+  done h2-dmodel graph=True
+  done h2-transformer-gpus graph=False
+  done h2-transformer-gpus graph=True
+  done h2-ihaze graph=False
+  done h2-ihaze graph=True
+  done h2-mamba graph=False
+  done h2-mamba graph=True
+  done h2-data-size graph=False
+  done h2-data-size graph=True
+  done h2-batch graph=False
+  done h2-batch graph=True
+  done h2-dims graph=False
+Traceback (most recent call last):
+  File "D:\Work\AARIADNE-NEW\backend\eval\run_eval.py", line 128, in <module>
+    main()
+  File "D:\Work\AARIADNE-NEW\backend\eval\run_eval.py", line 105, in main
+    r = ask(c, q["question"], use_graph)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\AARIADNE-NEW\backend\eval\run_eval.py", line 90, in ask
+    return c.post("/api/query", json={"question": question, "use_graph": use_graph, "verify_claims": VERIFY}).json()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\advi\.pyenv\pyenv-win\versions\3.11.9\Lib\site-packages\httpx\_models.py", line 832, in json
+    return jsonlib.loads(self.content, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\advi\.pyenv\pyenv-win\versions\3.11.9\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\advi\.pyenv\pyenv-win\versions\3.11.9\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\advi\.pyenv\pyenv-win\versions\3.11.9\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

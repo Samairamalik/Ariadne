@@ -1,0 +1,20 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: ariadne-db
+    environment:
+      POSTGRES_USER: ariadne
+      POSTGRES_PASSWORD: ariadne
+      POSTGRES_DB: ariadne
+    ports:
+      - "5433:5432"  # 5433 on the host: 5432 is commonly taken by other local Postgres instances
+    volumes:
+      - ariadne-pg:/var/lib/postgresql/data
+      - ./backend/db/schema.sql:/docker-entrypoint-initdb.d/001_schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ariadne"]
+      interval: 5s
+      retries: 10
+
+volumes:
+  ariadne-pg:

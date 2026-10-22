@@ -1,0 +1,212 @@
+  ERROR h2-dims graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h2-dims graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h2-speed graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h2-speed graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h2-cost-then-attention graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h2-cost-then-attention graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h2-out-vaccine graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h2-out-vaccine graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h2-out-mountain graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR h2-out-mountain graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-adam graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-adam graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-glue graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-glue graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-nsp graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-nsp graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-path-bert-transformer graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-path-bert-transformer graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-path-roberta-bert graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-path-roberta-bert graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-path-srn-repvgg graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-path-srn-repvgg graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-profile-repvgg graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-profile-repvgg graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-profile-roberta graph=False: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+  ERROR gs-profile-roberta graph=True: ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+==================== DEV SET (27 questions) ====================
+PASS RATE by question type (pass/total)   plain -> graph
+
+gate
+  lookup      12/12 ->  12/12
+  multi         4/4 ->    4/4
+  cross         6/6 ->    6/6
+  global        0/1 ->    1/1
+  unrelated     4/4 ->    4/4
+
+evidence
+  lookup      11/12 ->  11/12
+  multi         2/4 ->    3/4
+  cross         4/6 ->    5/6
+
+keywords
+  lookup      11/12 ->  11/12
+  multi         3/4 ->    4/4
+  cross         5/6 ->    5/6
+  global        0/1 ->    0/1
+
+citations
+  lookup      12/12 ->  12/12
+  multi         4/4 ->    4/4
+  cross         6/6 ->    6/6
+  global        0/1 ->    1/1
+
+FULLY CORRECT (every applicable check passes)
+  graph=False 21/27
+  graph=True  23/27
+
+NLI CLAIM CHECK (cited sentences: supported / unsupported / contradicted)
+  graph=False 18/27/18 of 63 claims (29% supported)
+  graph=True  17/26/10 of 53 claims (32% supported)
+
+CONTEXT SIZE / LATENCY (mean, excluding unrelated)
+  graph=False sources=5.7 docs=2.0 seconds=25.3
+  graph=True  sources=8.7 docs=2.2 seconds=36.7
+
+==================== HELDOUT SET (10 questions) ====================
+PASS RATE by question type (pass/total)   plain -> graph
+
+gate
+  lookup        4/4 ->    4/4
+  cross         4/4 ->    4/4
+  unrelated     2/2 ->    2/2
+
+evidence
+  lookup        4/4 ->    4/4
+  cross         0/4 ->    1/4
+
+keywords
+  lookup        4/4 ->    4/4
+  cross         3/4 ->    2/4
+
+citations
+  lookup        4/4 ->    4/4
+  cross         4/4 ->    4/4
+
+FULLY CORRECT (every applicable check passes)
+  graph=False 6/10
+  graph=True  7/10
+
+NLI CLAIM CHECK (cited sentences: supported / unsupported / contradicted)
+  graph=False 2/6/2 of 10 claims (20% supported)
+  graph=True  2/5/3 of 10 claims (20% supported)
+
+CONTEXT SIZE / LATENCY (mean, excluding unrelated)
+  graph=False sources=5.9 docs=1.4 seconds=27.1
+  graph=True  sources=9.8 docs=1.5 seconds=46.2
+
+==================== HELDOUT2 SET (12 questions) ====================
+PASS RATE by question type (pass/total)   plain -> graph
+
+gate
+  lookup        5/5 ->    5/5
+  cross         2/5 ->    2/5
+  unrelated     0/2 ->    0/2
+
+evidence
+  lookup        5/5 ->    5/5
+  cross         0/5 ->    0/5
+  unrelated     0/2 ->    0/2
+
+keywords
+  lookup        5/5 ->    5/5
+  cross         1/5 ->    1/5
+  unrelated     0/2 ->    0/2
+
+citations
+  lookup        5/5 ->    5/5
+  cross         2/5 ->    2/5
+  unrelated     0/2 ->    0/2
+
+FULLY CORRECT (every applicable check passes)
+  graph=False 5/12
+  graph=True  5/12
+
+NLI CLAIM CHECK (cited sentences: supported / unsupported / contradicted)
+  graph=False 1/5/3 of 9 claims (11% supported)
+  graph=True  3/5/1 of 9 claims (33% supported)
+
+CONTEXT SIZE / LATENCY (mean, excluding unrelated)
+  graph=False sources=4.2 docs=1.4 seconds=21.5
+  graph=True  sources=6.2 docs=1.4 seconds=29.5
+
+==================== GRAPH SET (8 questions) ====================
+PASS RATE by question type (pass/total)   plain -> graph
+
+gate
+  graph         0/8 ->    0/8
+
+evidence
+  graph         0/8 ->    0/8
+
+keywords
+  graph         0/8 ->    0/8
+
+citations
+  graph         0/8 ->    0/8
+
+FULLY CORRECT (every applicable check passes)
+  graph=False 0/8
+  graph=True  0/8
+
+NLI CLAIM CHECK (cited sentences: supported / unsupported / contradicted)
+  graph=False 0/0/0 of 0 claims (0% supported)
+  graph=True  0/0/0 of 0 claims (0% supported)
+
+CONTEXT SIZE / LATENCY (mean, excluding unrelated)
+  graph=False sources=0.0 docs=0.0 seconds=8.2
+  graph=True  sources=0.0 docs=0.0 seconds=8.1
+
+FAILURES
+  [dev] bert-corpora         graph=False failed=['evidence', 'keywords']
+  [dev] bert-corpora         graph=True  failed=['evidence', 'keywords']
+  [dev] three-families       graph=False failed=['evidence']
+  [dev] three-families       graph=True  failed=['evidence']
+  [dev] cross-doc-params     graph=False failed=['evidence', 'keywords']
+  [dev] x-masking            graph=False failed=['evidence', 'keywords']
+  [dev] x-masking            graph=True  failed=['evidence', 'keywords']
+  [dev] x-repvgg             graph=False failed=['evidence']
+  [dev] themes               graph=False failed=['gate', 'keywords', 'citations']
+  [dev] themes               graph=True  failed=['keywords']
+  [heldout] h-vocab-contrast     graph=False failed=['evidence']
+  [heldout] h-adam-beta          graph=False failed=['evidence', 'keywords']
+  [heldout] h-adam-beta          graph=True  failed=['evidence', 'keywords']
+  [heldout] h-heads              graph=False failed=['evidence']
+  [heldout] h-heads              graph=True  failed=['evidence', 'keywords']
+  [heldout] h-repvgg-source      graph=False failed=['evidence']
+  [heldout] h-repvgg-source      graph=True  failed=['evidence']
+  [heldout2] h2-data-size         graph=False failed=['evidence']
+  [heldout2] h2-data-size         graph=True  failed=['evidence']
+  [heldout2] h2-batch             graph=False failed=['evidence', 'keywords']
+  [heldout2] h2-batch             graph=True  failed=['evidence', 'keywords']
+  [heldout2] h2-dims              graph=False failed=['gate', 'evidence', 'keywords', 'citations']
+  [heldout2] h2-dims              graph=True  failed=['gate', 'evidence', 'keywords', 'citations']
+  [heldout2] h2-speed             graph=False failed=['gate', 'evidence', 'keywords', 'citations']
+  [heldout2] h2-speed             graph=True  failed=['gate', 'evidence', 'keywords', 'citations']
+  [heldout2] h2-cost-then-attention graph=False failed=['gate', 'evidence', 'keywords', 'citations']
+  [heldout2] h2-cost-then-attention graph=True  failed=['gate', 'evidence', 'keywords', 'citations']
+  [heldout2] h2-out-vaccine       graph=False failed=['gate', 'evidence', 'keywords', 'citations']
+  [heldout2] h2-out-vaccine       graph=True  failed=['gate', 'evidence', 'keywords', 'citations']
+  [heldout2] h2-out-mountain      graph=False failed=['gate', 'evidence', 'keywords', 'citations']
+  [heldout2] h2-out-mountain      graph=True  failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-adam              graph=False failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-adam              graph=True  failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-glue              graph=False failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-glue              graph=True  failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-nsp               graph=False failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-nsp               graph=True  failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-path-bert-transformer graph=False failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-path-bert-transformer graph=True  failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-path-roberta-bert graph=False failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-path-roberta-bert graph=True  failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-path-srn-repvgg   graph=False failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-path-srn-repvgg   graph=True  failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-profile-repvgg    graph=False failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-profile-repvgg    graph=True  failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-profile-roberta   graph=False failed=['gate', 'evidence', 'keywords', 'citations']
+  [graph] gs-profile-roberta   graph=True  failed=['gate', 'evidence', 'keywords', 'citations']
+
+26 request(s) errored and count as failures: ['h2-dims', 'h2-dims', 'h2-speed', 'h2-speed', 'h2-cost-then-attention', 'h2-cost-then-attention', 'h2-out-vaccine', 'h2-out-vaccine', 'h2-out-mountain', 'h2-out-mountain', 'gs-adam', 'gs-adam', 'gs-glue', 'gs-glue', 'gs-nsp', 'gs-nsp', 'gs-path-bert-transformer', 'gs-path-bert-transformer', 'gs-path-roberta-bert', 'gs-path-roberta-bert', 'gs-path-srn-repvgg', 'gs-path-srn-repvgg', 'gs-profile-repvgg', 'gs-profile-repvgg', 'gs-profile-roberta', 'gs-profile-roberta']
+
+saved D:\Work\AARIADNE-NEW\backend\eval\results\eval-20261020-204912.json

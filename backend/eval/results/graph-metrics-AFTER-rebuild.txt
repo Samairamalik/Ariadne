@@ -1,0 +1,9 @@
+documents | 6
+chunks | 278
+nodes | 894
+edges | 0
+nodes spanning 2+ papers | 0
+self-reference nodes (we/the model/our .../it) | 3
+edges touching a self-reference node | 0
+communities | 16
+merges logged | 34

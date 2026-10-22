@@ -1,0 +1,16 @@
+pre-flight ok: embedder and language model both work
+LLM provider failed, trying next: ollama: cannot reach Ollama at http://localhost:11434 (ReadTimeout)
+triple extraction failed for batches starting at chunk [24]: ollama: cannot reach Ollama at http://localhost:11434 (ReadTimeout) (document 8a7e7cc5-c6ed-4d2c-9cde-3bf46b946a21)
+1810.04805v2.pdf           OK   {'ok': True, 'old_edges': 0, 'warning': 'triple extraction failed for batches starting at chunk [24]: ollama: cannot reach Ollama at http://localhost:11434 (ReadTimeout)', 'triples': 99, 'nodes_created': 102, 'edges_created': 99}  (1082s)
+Ollama failed on default device (model runner has unexpectedly stopped, this may be due to resource limitations or an internal error, check ollama server); retrying on CPU
+avssfianal.pdf             OK   {'ok': True, 'old_edges': 0, 'warning': None, 'triples': 57, 'nodes_created': 72, 'edges_created': 57}  (14513s)
+survey.pdf                 OK   {'ok': True, 'old_edges': 0, 'warning': None, 'triples': 11, 'nodes_created': 20, 'edges_created': 11}  (15s)
+ROBERTA.pdf                OK   {'ok': True, 'old_edges': 0, 'warning': None, 'triples': 93, 'nodes_created': 117, 'edges_created': 92}  (169s)
+Ollama failed on default device (model runner has unexpectedly stopped, this may be due to resource limitations or an internal error, check ollama server); retrying on CPU
+REPVGGPAP.pdf              OK   {'ok': True, 'old_edges': 0, 'warning': None, 'triples': 74, 'nodes_created': 102, 'edges_created': 74}  (21179s)
+Ollama failed on default device (model runner has unexpectedly stopped, this may be due to resource limitations or an internal error, check ollama server); retrying on CPU
+attentionisallyouneed.pdf  OK   {'ok': True, 'old_edges': 0, 'warning': None, 'triples': 75, 'nodes_created': 124, 'edges_created': 75}  (1368s)
+entity merging: 12 of 14 candidate pairs merged
+Ollama failed on default device (model runner has unexpectedly stopped, this may be due to resource limitations or an internal error, check ollama server); retrying on CPU
+Ollama failed on default device (model runner has unexpectedly stopped, this may be due to resource limitations or an internal error, check ollama server); retrying on CPU
+communities: {'communities_found': 19, 'built': 19}

@@ -1,0 +1,133 @@
+
+==================== DEV SET (27 questions) ====================
+PASS RATE by question type (pass/total)   plain -> graph
+
+gate
+  lookup      12/12 ->  12/12
+  multi         4/4 ->    4/4
+  cross         6/6 ->    6/6
+  global        0/1 ->    1/1
+  unrelated     4/4 ->    4/4
+
+evidence
+  lookup      11/12 ->  11/12
+  multi         2/4 ->    3/4
+  cross         4/6 ->    5/6
+
+keywords
+  lookup      11/12 ->  11/12
+  multi         3/4 ->    4/4
+  cross         5/6 ->    5/6
+  global        0/1 ->    0/1
+
+citations
+  lookup      12/12 ->  12/12
+  multi         4/4 ->    4/4
+  cross         6/6 ->    6/6
+  global        0/1 ->    1/1
+
+FULLY CORRECT (every applicable check passes)
+  graph=False 21/27
+  graph=True  23/27
+
+NLI CLAIM CHECK (cited sentences: supported / unverified / contradicted)
+  graph=False 17/44/2 of 63 claims (27% supported)
+  graph=True  15/38/2 of 55 claims (27% supported)
+
+CONTEXT SIZE / LATENCY (mean, excluding unrelated)
+  graph=False sources=5.7 docs=2.0 seconds=29.1
+  graph=True  sources=8.7 docs=2.2 seconds=44.5
+
+==================== HELDOUT SET (10 questions) ====================
+PASS RATE by question type (pass/total)   plain -> graph
+
+gate
+  lookup        4/4 ->    4/4
+  cross         4/4 ->    4/4
+  unrelated     2/2 ->    2/2
+
+evidence
+  lookup        4/4 ->    4/4
+  cross         0/4 ->    1/4
+
+keywords
+  lookup        4/4 ->    4/4
+  cross         3/4 ->    2/4
+
+citations
+  lookup        4/4 ->    4/4
+  cross         4/4 ->    4/4
+
+FULLY CORRECT (every applicable check passes)
+  graph=False 6/10
+  graph=True  7/10
+
+NLI CLAIM CHECK (cited sentences: supported / unverified / contradicted)
+  graph=False 2/8/0 of 10 claims (20% supported)
+  graph=True  2/8/0 of 10 claims (20% supported)
+
+CONTEXT SIZE / LATENCY (mean, excluding unrelated)
+  graph=False sources=5.9 docs=1.4 seconds=26.8
+  graph=True  sources=9.8 docs=1.5 seconds=44.6
+
+==================== HELDOUT2 SET (12 questions) ====================
+PASS RATE by question type (pass/total)   plain -> graph
+
+gate
+  lookup        5/5 ->    5/5
+  cross         5/5 ->    5/5
+  unrelated     2/2 ->    2/2
+
+evidence
+  lookup        5/5 ->    5/5
+  cross         1/5 ->    2/5
+
+keywords
+  lookup        5/5 ->    5/5
+  cross         1/5 ->    2/5
+
+citations
+  lookup        5/5 ->    5/5
+  cross         5/5 ->    5/5
+
+FULLY CORRECT (every applicable check passes)
+  graph=False 7/12
+  graph=True  8/12
+
+NLI CLAIM CHECK (cited sentences: supported / unverified / contradicted)
+  graph=False 2/12/1 of 15 claims (13% supported)
+  graph=True  4/12/1 of 17 claims (24% supported)
+
+CONTEXT SIZE / LATENCY (mean, excluding unrelated)
+  graph=False sources=5.9 docs=2.2 seconds=26.6
+  graph=True  sources=9.0 docs=2.2 seconds=42.3
+
+FAILURES
+  [dev] bert-corpora         graph=False failed=['evidence', 'keywords']
+  [dev] bert-corpora         graph=True  failed=['evidence', 'keywords']
+  [dev] three-families       graph=False failed=['evidence']
+  [dev] three-families       graph=True  failed=['evidence']
+  [dev] cross-doc-params     graph=False failed=['evidence', 'keywords']
+  [dev] x-masking            graph=False failed=['evidence', 'keywords']
+  [dev] x-masking            graph=True  failed=['evidence', 'keywords']
+  [dev] x-repvgg             graph=False failed=['evidence']
+  [dev] themes               graph=False failed=['gate', 'keywords', 'citations']
+  [dev] themes               graph=True  failed=['keywords']
+  [heldout] h-vocab-contrast     graph=False failed=['evidence']
+  [heldout] h-adam-beta          graph=False failed=['evidence', 'keywords']
+  [heldout] h-adam-beta          graph=True  failed=['evidence', 'keywords']
+  [heldout] h-heads              graph=False failed=['evidence']
+  [heldout] h-heads              graph=True  failed=['evidence', 'keywords']
+  [heldout] h-repvgg-source      graph=False failed=['evidence']
+  [heldout] h-repvgg-source      graph=True  failed=['evidence']
+  [heldout2] h2-data-size         graph=False failed=['evidence']
+  [heldout2] h2-data-size         graph=True  failed=['evidence']
+  [heldout2] h2-batch             graph=False failed=['evidence', 'keywords']
+  [heldout2] h2-batch             graph=True  failed=['evidence', 'keywords']
+  [heldout2] h2-dims              graph=False failed=['evidence', 'keywords']
+  [heldout2] h2-dims              graph=True  failed=['evidence', 'keywords']
+  [heldout2] h2-speed             graph=False failed=['evidence', 'keywords']
+  [heldout2] h2-cost-then-attention graph=False failed=['keywords']
+  [heldout2] h2-cost-then-attention graph=True  failed=['keywords']
+
+saved D:\Work\AARIADNE-NEW\backend\eval\results\eval-20261020-221907.json

@@ -1,0 +1,905 @@
+[
+ {
+  "id": "bert-large-params",
+  "type": "lookup",
+  "question": "How many parameters does BERT large have?",
+  "evidence": [
+   "340M"
+  ],
+  "keywords": [
+   [
+    "340m",
+    "340 million"
+   ]
+  ]
+ },
+ {
+  "id": "bert-vocab",
+  "type": "lookup",
+  "question": "What vocabulary size does BERT use?",
+  "evidence": [
+   "30,000"
+  ],
+  "keywords": [
+   [
+    "30,000",
+    "30000",
+    "30k"
+   ]
+  ]
+ },
+ {
+  "id": "bert-mask",
+  "type": "lookup",
+  "question": "What fraction of tokens does BERT mask during pre-training?",
+  "evidence": [
+   "15% of all WordPiece"
+  ],
+  "keywords": [
+   [
+    "15%",
+    "15 %",
+    "fifteen percent"
+   ]
+  ]
+ },
+ {
+  "id": "bert-corpora",
+  "type": "lookup",
+  "question": "What corpora was BERT pre-trained on?",
+  "evidence": [
+   "BooksCorpus (800M words)"
+  ],
+  "keywords": [
+   [
+    "bookscorpus"
+   ],
+   [
+    "wikipedia"
+   ]
+  ]
+ },
+ {
+  "id": "bert-hardware",
+  "type": "lookup",
+  "question": "What hardware was BERT-base trained on?",
+  "evidence": [
+   "4 Cloud TPUs in Pod configuration"
+  ],
+  "keywords": [
+   [
+    "tpu"
+   ]
+  ]
+ },
+ {
+  "id": "srn-fps",
+  "type": "lookup",
+  "question": "What frame rate does SpectralRepNet reach on the Jetson Nano?",
+  "evidence": [
+   "Jetson Nano (80 FPS)"
+  ],
+  "keywords": [
+   [
+    "80"
+   ]
+  ]
+ },
+ {
+  "id": "srn-params",
+  "type": "lookup",
+  "question": "How many parameters does SpectralRepNet have?",
+  "evidence": [
+   "0.38M parameters"
+  ],
+  "keywords": [
+   [
+    "0.38"
+   ]
+  ]
+ },
+ {
+  "id": "srn-reparam",
+  "type": "lookup",
+  "question": "How much does reparameterization speed up inference in SpectralRepNet?",
+  "evidence": [
+   "19.7%"
+  ],
+  "keywords": [
+   [
+    "19.7"
+   ]
+  ]
+ },
+ {
+  "id": "rtts-size",
+  "type": "lookup",
+  "question": "How many real hazy images does the RTTS test set contain?",
+  "evidence": [
+   "4,322 real hazy images"
+  ],
+  "keywords": [
+   [
+    "4,322",
+    "4322"
+   ]
+  ]
+ },
+ {
+  "id": "longformer-window",
+  "type": "lookup",
+  "question": "What window size does Longformer use?",
+  "evidence": [
+   "window of 512 tokens"
+  ],
+  "keywords": [
+   [
+    "512"
+   ]
+  ]
+ },
+ {
+  "id": "bigbird-turing",
+  "type": "lookup",
+  "question": "Is BigBird Turing complete?",
+  "evidence": [
+   "Turing complete"
+  ],
+  "keywords": [
+   [
+    "turing complete",
+    "yes"
+   ]
+  ]
+ },
+ {
+  "id": "favor",
+  "type": "lookup",
+  "question": "What is FAVOR+ and which method uses it?",
+  "evidence": [
+   "FAVOR+"
+  ],
+  "keywords": [
+   [
+    "performer"
+   ],
+   [
+    "random feature"
+   ]
+  ]
+ },
+ {
+  "id": "sparse-two",
+  "type": "multi",
+  "question": "How do Longformer and BigBird reduce the cost of attention?",
+  "evidence": [
+   "Longformer uses a sliding window",
+   "BigBird combines three ingredients"
+  ],
+  "keywords": [
+   [
+    "sliding window"
+   ],
+   [
+    "random",
+    "global"
+   ]
+  ]
+ },
+ {
+  "id": "three-families",
+  "type": "multi",
+  "question": "What are the three families of remedies for quadratic attention cost, and how does each work?",
+  "evidence": [
+   "three families of remedies",
+   "Linear attention replaces the softmax",
+   "State space models process a sequence"
+  ],
+  "keywords": [
+   [
+    "sparse"
+   ],
+   [
+    "linear attention",
+    "kernel"
+   ],
+   [
+    "state space"
+   ]
+  ]
+ },
+ {
+  "id": "tradeoffs",
+  "type": "multi",
+  "question": "What are the trade-offs between sparse attention, linear attention and state space models?",
+  "evidence": [
+   "No single mechanism dominates"
+  ],
+  "keywords": [
+   [
+    "recall",
+    "accuracy"
+   ],
+   [
+    "throughput"
+   ]
+  ]
+ },
+ {
+  "id": "cross-doc-params",
+  "type": "multi",
+  "question": "Compare the parameter counts reported for BERT and for SpectralRepNet.",
+  "evidence": [
+   "340M",
+   "0.38M parameters"
+  ],
+  "keywords": [
+   [
+    "340m",
+    "340 million",
+    "110m",
+    "110 million"
+   ],
+   [
+    "0.38"
+   ]
+  ]
+ },
+ {
+  "id": "x-masking",
+  "type": "cross",
+  "question": "What did RoBERTa change about the masking strategy that BERT used?",
+  "evidence": [
+   "single static mask",
+   "dynamic masking"
+  ],
+  "keywords": [
+   [
+    "dynamic"
+   ],
+   [
+    "static"
+   ]
+  ]
+ },
+ {
+  "id": "x-nsp",
+  "type": "cross",
+  "question": "Does RoBERTa keep the next sentence prediction objective that BERT introduced?",
+  "evidence": [
+   "removing the next sentence prediction objective"
+  ],
+  "keywords": [
+   [
+    "remov",
+    "drop",
+    "no longer",
+    "not ",
+    "without",
+    "eliminat"
+   ]
+  ]
+ },
+ {
+  "id": "x-data",
+  "type": "cross",
+  "question": "How much more training text does RoBERTa use than the original BERT?",
+  "evidence": [
+   "totaling over 160GB",
+   "the original data used to train BERT. (16GB)"
+  ],
+  "keywords": [
+   [
+    "160"
+   ],
+   [
+    "16gb",
+    "16 gb"
+   ]
+  ]
+ },
+ {
+  "id": "x-transformer",
+  "type": "cross",
+  "question": "What architecture is BERT based on, and how does that architecture compute attention?",
+  "evidence": [
+   "multi-layer bidirectional Transformer encoder",
+   "Scaled Dot-Product Attention"
+  ],
+  "keywords": [
+   [
+    "transformer"
+   ],
+   [
+    "scaled dot-product",
+    "dot-product",
+    "dot product"
+   ]
+  ]
+ },
+ {
+  "id": "x-repvgg",
+  "type": "cross",
+  "question": "How does SpectralRepNet use the structural re-parameterization technique introduced by RepVGG?",
+  "evidence": [
+   "structural re-parameterization",
+   "RepVGG structural reparameterization"
+  ],
+  "keywords": [
+   [
+    "single 3",
+    "3x3",
+    "3 x 3",
+    "one convolution",
+    "single convolution"
+   ],
+   [
+    "branch"
+   ]
+  ]
+ },
+ {
+  "id": "x-repvgg-train",
+  "type": "cross",
+  "question": "Which branches does the RepVGG paper use during training, and how are they used at inference time?",
+  "evidence": [
+   "identity and 1×1 branches"
+  ],
+  "keywords": [
+   [
+    "identity"
+   ],
+   [
+    "single",
+    "one 3",
+    "fused",
+    "merged",
+    "converted",
+    "remov"
+   ]
+  ]
+ },
+ {
+  "id": "themes",
+  "type": "global",
+  "question": "What are the main themes across these documents?",
+  "evidence": [],
+  "keywords": [
+   [
+    "attention",
+    "bert",
+    "language"
+   ],
+   [
+    "dehaz",
+    "haze",
+    "image"
+   ]
+  ]
+ },
+ {
+  "id": "out-moon",
+  "type": "unrelated",
+  "question": "How does the moon orbit the earth?",
+  "evidence": [],
+  "keywords": []
+ },
+ {
+  "id": "out-france",
+  "type": "unrelated",
+  "question": "What is the capital of France?",
+  "evidence": [],
+  "keywords": []
+ },
+ {
+  "id": "out-bread",
+  "type": "unrelated",
+  "question": "How do I bake sourdough bread?",
+  "evidence": [],
+  "keywords": []
+ },
+ {
+  "id": "out-mortgage",
+  "type": "unrelated",
+  "question": "Explain how mortgages work",
+  "evidence": [],
+  "keywords": []
+ },
+ {
+  "id": "h-vocab-contrast",
+  "type": "cross",
+  "split": "heldout",
+  "question": "How does the vocabulary RoBERTa uses differ from BERT's?",
+  "evidence": [
+   "50K subword units",
+   "30,000 token vocabulary"
+  ],
+  "keywords": [
+   [
+    "50k",
+    "50,000",
+    "50 k"
+   ],
+   [
+    "30,000",
+    "30000",
+    "30k"
+   ]
+  ]
+ },
+ {
+  "id": "h-adam-beta",
+  "type": "cross",
+  "split": "heldout",
+  "question": "What Adam beta2 value did BERT use for pre-training, and what did RoBERTa change it to?",
+  "evidence": [
+   "β2 = 0.999",
+   "β2 = 0.98"
+  ],
+  "keywords": [
+   [
+    "0.999"
+   ],
+   [
+    "0.98"
+   ]
+  ]
+ },
+ {
+  "id": "h-heads",
+  "type": "cross",
+  "split": "heldout",
+  "question": "How many attention heads does the original Transformer use, and how many does BERT-base use?",
+  "evidence": [
+   "h = 8 parallel attention layers",
+   "A=12"
+  ],
+  "keywords": [
+   [
+    "8",
+    "eight"
+   ],
+   [
+    "12",
+    "twelve"
+   ]
+  ]
+ },
+ {
+  "id": "h-repvgg-source",
+  "type": "cross",
+  "split": "heldout",
+  "question": "Which paper introduced the reparameterization idea that SpectralRepNet builds on?",
+  "evidence": [
+   "RepVGG structural reparameterization",
+   "so that the model is named RepVGG"
+  ],
+  "keywords": [
+   [
+    "repvgg"
+   ]
+  ]
+ },
+ {
+  "id": "h-repvgg-acc",
+  "type": "lookup",
+  "split": "heldout",
+  "question": "What top-1 accuracy on ImageNet does RepVGG reach?",
+  "evidence": [
+   "over 80% top-1 accuracy"
+  ],
+  "keywords": [
+   [
+    "80"
+   ]
+  ]
+ },
+ {
+  "id": "h-transformer-layers",
+  "type": "lookup",
+  "split": "heldout",
+  "question": "How many identical layers are in the Transformer encoder stack?",
+  "evidence": [
+   "N = 6 identical layers"
+  ],
+  "keywords": [
+   [
+    "6",
+    "six"
+   ]
+  ]
+ },
+ {
+  "id": "h-bert-lr",
+  "type": "lookup",
+  "split": "heldout",
+  "question": "What learning rate did BERT use for pre-training?",
+  "evidence": [
+   "learning rate of 1e-4"
+  ],
+  "keywords": [
+   [
+    "1e-4",
+    "1×10",
+    "0.0001"
+   ]
+  ]
+ },
+ {
+  "id": "h-repvgg-speed",
+  "type": "lookup",
+  "split": "heldout",
+  "question": "How much faster than ResNet-50 does RepVGG run on a 1080Ti GPU?",
+  "evidence": [
+   "83% faster than ResNet-50"
+  ],
+  "keywords": [
+   [
+    "83"
+   ]
+  ]
+ },
+ {
+  "id": "h-out-water",
+  "type": "unrelated",
+  "split": "heldout",
+  "question": "What is the boiling point of water?",
+  "evidence": [],
+  "keywords": []
+ },
+ {
+  "id": "h-out-football",
+  "type": "unrelated",
+  "split": "heldout",
+  "question": "Who won the 2018 football world cup?",
+  "evidence": [],
+  "keywords": []
+ },
+ {
+  "id": "h2-bert-seqlen",
+  "type": "lookup",
+  "split": "heldout2",
+  "question": "What sequence length did BERT use for most of its pre-training steps?",
+  "evidence": [
+   "sequence length of 128 for 90% of the steps"
+  ],
+  "keywords": [
+   [
+    "128"
+   ]
+  ]
+ },
+ {
+  "id": "h2-dmodel",
+  "type": "lookup",
+  "split": "heldout2",
+  "question": "What output dimension do the sub-layers and embedding layers of the Transformer produce?",
+  "evidence": [
+   "dmodel = 512"
+  ],
+  "keywords": [
+   [
+    "512"
+   ]
+  ]
+ },
+ {
+  "id": "h2-transformer-gpus",
+  "type": "lookup",
+  "split": "heldout2",
+  "question": "How long did the big Transformer take to train, and on what hardware?",
+  "evidence": [
+   "3.5 days on 8 P100 GPUs"
+  ],
+  "keywords": [
+   [
+    "3.5"
+   ],
+   [
+    "p100"
+   ]
+  ]
+ },
+ {
+  "id": "h2-ihaze",
+  "type": "lookup",
+  "split": "heldout2",
+  "question": "On which datasets was SpectralRepNet's transferability evaluated?",
+  "evidence": [
+   "I-HAZE and O-HAZE"
+  ],
+  "keywords": [
+   [
+    "i-haze"
+   ],
+   [
+    "o-haze"
+   ]
+  ]
+ },
+ {
+  "id": "h2-mamba",
+  "type": "lookup",
+  "split": "heldout2",
+  "question": "What does the survey say about Mamba's inference throughput?",
+  "evidence": [
+   "five times higher inference throughput"
+  ],
+  "keywords": [
+   [
+    "five",
+    "5"
+   ]
+  ]
+ },
+ {
+  "id": "h2-data-size",
+  "type": "cross",
+  "split": "heldout2",
+  "question": "How large was BERT's pre-training corpus in words, and how much text does RoBERTa use?",
+  "evidence": [
+   "3.3 billion word corpus",
+   "totaling over 160GB"
+  ],
+  "keywords": [
+   [
+    "3.3 billion",
+    "3,300",
+    "3.3b"
+   ],
+   [
+    "160"
+   ]
+  ]
+ },
+ {
+  "id": "h2-batch",
+  "type": "cross",
+  "split": "heldout2",
+  "question": "What batch size did BERT use for pre-training, and what larger batch size does RoBERTa use?",
+  "evidence": [
+   "batch size of 256 sequences",
+   "batch size of 8K"
+  ],
+  "keywords": [
+   [
+    "256"
+   ],
+   [
+    "8k",
+    "8,000",
+    "8000"
+   ]
+  ]
+ },
+ {
+  "id": "h2-dims",
+  "type": "cross",
+  "split": "heldout2",
+  "question": "What model dimension does the Transformer use, and what hidden size does BERT-base use?",
+  "evidence": [
+   "dmodel = 512",
+   "H=768"
+  ],
+  "keywords": [
+   [
+    "512"
+   ],
+   [
+    "768"
+   ]
+  ]
+ },
+ {
+  "id": "h2-speed",
+  "type": "cross",
+  "split": "heldout2",
+  "question": "How fast does SpectralRepNet run on the Jetson Nano, and how much faster than ResNet-50 does RepVGG run?",
+  "evidence": [
+   "Jetson Nano (80 FPS)",
+   "83% faster than ResNet-50"
+  ],
+  "keywords": [
+   [
+    "80"
+   ],
+   [
+    "83"
+   ]
+  ]
+ },
+ {
+  "id": "h2-cost-then-attention",
+  "type": "cross",
+  "split": "heldout2",
+  "question": "Why does self-attention become expensive on long documents, and which mechanism does the Transformer paper use to compute it?",
+  "evidence": [
+   "grow quadratically with sequence length",
+   "Scaled Dot-Product Attention"
+  ],
+  "keywords": [
+   [
+    "quadratic"
+   ],
+   [
+    "scaled dot-product",
+    "dot-product",
+    "dot product"
+   ]
+  ]
+ },
+ {
+  "id": "h2-out-vaccine",
+  "type": "unrelated",
+  "split": "heldout2",
+  "question": "How do vaccines train the immune system?",
+  "evidence": [],
+  "keywords": []
+ },
+ {
+  "id": "h2-out-mountain",
+  "type": "unrelated",
+  "split": "heldout2",
+  "question": "What is the tallest mountain in the world?",
+  "evidence": [],
+  "keywords": []
+ },
+ {
+  "id": "gs-adam",
+  "type": "graph",
+  "split": "graph",
+  "question": "Which papers in the library train with the Adam optimizer?",
+  "evidence": [
+   "Adam with learning rate of 1e-4",
+   "We used the Adam optimizer",
+   "BERT is optimized with Adam"
+  ],
+  "keywords": [
+   [
+    "bert"
+   ],
+   [
+    "roberta"
+   ],
+   [
+    "attention is all you need",
+    "transformer",
+    "vaswani"
+   ]
+  ]
+ },
+ {
+  "id": "gs-glue",
+  "type": "graph",
+  "split": "graph",
+  "question": "Which papers report results on the GLUE benchmark?",
+  "evidence": [
+   "pushing the GLUE score",
+   "state-of-the-art results on GLUE, RACE and SQuAD"
+  ],
+  "keywords": [
+   [
+    "bert"
+   ],
+   [
+    "roberta"
+   ]
+  ]
+ },
+ {
+  "id": "gs-nsp",
+  "type": "graph",
+  "split": "graph",
+  "question": "Which papers discuss the next sentence prediction objective?",
+  "evidence": [
+   "removing the next sentence prediction objective"
+  ],
+  "keywords": [
+   [
+    "bert"
+   ],
+   [
+    "roberta"
+   ]
+  ]
+ },
+ {
+  "id": "gs-path-bert-transformer",
+  "type": "graph",
+  "split": "graph",
+  "question": "How is BERT related to the Transformer paper 'Attention Is All You Need'?",
+  "evidence": [
+   "multi-layer bidirectional Transformer encoder"
+  ],
+  "keywords": [
+   [
+    "transformer"
+   ],
+   [
+    "encoder"
+   ]
+  ]
+ },
+ {
+  "id": "gs-path-roberta-bert",
+  "type": "graph",
+  "split": "graph",
+  "question": "How is RoBERTa related to BERT?",
+  "evidence": [
+   "replication study of BERT pretraining"
+  ],
+  "keywords": [
+   [
+    "bert"
+   ],
+   [
+    "pretrain",
+    "pre-train",
+    "replicat",
+    "optimi"
+   ]
+  ]
+ },
+ {
+  "id": "gs-path-srn-repvgg",
+  "type": "graph",
+  "split": "graph",
+  "question": "How are SpectralRepNet and RepVGG related?",
+  "evidence": [
+   "RepVGG structural reparameterization"
+  ],
+  "keywords": [
+   [
+    "repvgg"
+   ],
+   [
+    "reparameter",
+    "re-parameter"
+   ]
+  ]
+ },
+ {
+  "id": "gs-profile-repvgg",
+  "type": "graph",
+  "split": "graph",
+  "question": "Tell me everything the library says about RepVGG.",
+  "evidence": [
+   "over 80% top-1 accuracy",
+   "RepVGG structural reparameterization"
+  ],
+  "keywords": [
+   [
+    "80"
+   ],
+   [
+    "reparameter",
+    "re-parameter"
+   ],
+   [
+    "spectralrepnet"
+   ]
+  ]
+ },
+ {
+  "id": "gs-profile-roberta",
+  "type": "graph",
+  "split": "graph",
+  "question": "Summarize everything the library says about RoBERTa.",
+  "evidence": [
+   "removing the next sentence prediction objective",
+   "totaling over 160GB"
+  ],
+  "keywords": [
+   [
+    "dynamic"
+   ],
+   [
+    "160"
+   ],
+   [
+    "next sentence prediction",
+    "nsp"
+   ]
+  ]
+ }
+]

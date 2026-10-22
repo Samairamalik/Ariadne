@@ -1,0 +1,632 @@
+[
+ {
+  "id": "bert-large-params",
+  "type": "lookup",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 33.0,
+  "answer": "BERTLARGE contains 340M parameters [1]."
+ },
+ {
+  "id": "bert-large-params",
+  "type": "lookup",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 3.9,
+  "answer": "BERTLARGE contains 340M parameters [3]."
+ },
+ {
+  "id": "bert-vocab",
+  "type": "lookup",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.3,
+  "answer": "BERT uses a vocabulary size of 30,000 tokens [3]."
+ },
+ {
+  "id": "bert-vocab",
+  "type": "lookup",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 3.8,
+  "answer": "BERT uses a vocabulary size of 30,000 [3]."
+ },
+ {
+  "id": "bert-mask",
+  "type": "lookup",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.1,
+  "answer": "BERT masks 15% of the tokens during pre-training [1][2]."
+ },
+ {
+  "id": "bert-mask",
+  "type": "lookup",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 3.7,
+  "answer": "BERT masks 15% of the tokens during pre-training [1][2]."
+ },
+ {
+  "id": "bert-corpora",
+  "type": "lookup",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.4,
+  "answer": "BERT was pre-trained on two corpora: the BooksCorpus consisting of 800 million words [2][3], and Wikipedia containing 2.5 billion words [2][3]."
+ },
+ {
+  "id": "bert-corpora",
+  "type": "lookup",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 3.9,
+  "answer": "BERT was pre-trained on two corpora: the BooksCorpus (800M words) and Wikipedia (2,500M words) [2][10]."
+ },
+ {
+  "id": "bert-hardware",
+  "type": "lookup",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.1,
+  "answer": "BERT-base was trained on 4 Cloud TPUs in Pod configuration, with a total of 16 TPU chips [1]."
+ },
+ {
+  "id": "bert-hardware",
+  "type": "lookup",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 3.8,
+  "answer": "BERT-base was trained on 4 Cloud TPUs in Pod configuration, with a total of 16 TPU chips [1]."
+ },
+ {
+  "id": "srn-fps",
+  "type": "lookup",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.2,
+  "answer": "SpectralRepNet reaches 80 FPS on the Jetson Nano [2][5]."
+ },
+ {
+  "id": "srn-fps",
+  "type": "lookup",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 3.8,
+  "answer": "SpectralRepNet achieves 80 FPS on the Jetson Nano [5][2]."
+ },
+ {
+  "id": "srn-params",
+  "type": "lookup",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 2.9,
+  "answer": "SpectralRepNet has 0.38 million parameters [2][4]."
+ },
+ {
+  "id": "srn-params",
+  "type": "lookup",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 3.5,
+  "answer": "SpectralRepNet has 0.38 million parameters [4]."
+ },
+ {
+  "id": "srn-reparam",
+  "type": "lookup",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 2.9,
+  "answer": "Reparameterization speeds up inference in SpectralRepNet by 19.7% [1][2]."
+ },
+ {
+  "id": "srn-reparam",
+  "type": "lookup",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 1,
+  "seconds": 3.5,
+  "answer": "Reparameterization speeds up inference in SpectralRepNet by 19.7% [9][7]."
+ },
+ {
+  "id": "rtts-size",
+  "type": "lookup",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 2.9,
+  "answer": "The RTTS test set contains 4,322 real hazy images [6]."
+ },
+ {
+  "id": "rtts-size",
+  "type": "lookup",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 3.1,
+  "answer": "The RTTS test set contains 4,322 real hazy images [2]."
+ },
+ {
+  "id": "longformer-window",
+  "type": "lookup",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 3,
+  "seconds": 3.9,
+  "answer": "Longformer uses a sliding window pattern with a window size of 512 tokens [1]."
+ },
+ {
+  "id": "longformer-window",
+  "type": "lookup",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 3,
+  "seconds": 3.4,
+  "answer": "Longformer uses a sliding window pattern with a window size of 512 tokens [1]."
+ },
+ {
+  "id": "bigbird-turing",
+  "type": "lookup",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 2.9,
+  "answer": "BigBird is Turing complete [1]."
+ },
+ {
+  "id": "bigbird-turing",
+  "type": "lookup",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 3.0,
+  "answer": "Yes, BigBird is Turing complete [1]."
+ },
+ {
+  "id": "favor",
+  "type": "lookup",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 3,
+  "seconds": 3.8,
+  "answer": "FAVOR+ is a method used by the Performer to approximate the softmax kernel with positive orthogonal random features [1]. It provides an unbiased estimate of the attention matrix without materializing it, and the approximation error depends on the number of random features used [1]. The Performer method uses FAVOR+ to achieve efficient attention mechanisms [1]."
+ },
+ {
+  "id": "favor",
+  "type": "lookup",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 3,
+  "seconds": 3.8,
+  "answer": "FAVOR+ is a method that approximates the softmax kernel with positive orthogonal random features, providing an unbiased estimate of the attention matrix without materializing it [1]. The method that uses FAVOR+ is Performer [1]."
+ },
+ {
+  "id": "sparse-two",
+  "type": "multi",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 4.4,
+  "answer": "Longformer uses a sliding window pattern in which each token attends only to its neighbors within a window of 512 tokens [2]. This restricts the number of computed scores to grow linearly rather than quadratically with sequence length, reducing the attention cost [2].\n\nBigBird combines a sliding window, global tokens, and randomly chosen connections between positions. The sliding window allows each token to attend to a subset of nearby tokens, while the global tokens and random connections provide long-range dependencies. This sparse mechanism is proven to be a universal approximator of sequence functions and keeps the expressive power of full attention while using only linear memory [1]."
+ },
+ {
+  "id": "sparse-two",
+  "type": "multi",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 7,
+  "docs": 2,
+  "seconds": 4.9,
+  "answer": "Longformer and BigBird both use sparse attention patterns to reduce the cost of attention. \n\nLongformer uses a sliding window pattern, where each token attends only to its neighbors within a window of 512 tokens [2]. This restricts the number of computed scores to only the nearby tokens, resulting in linear growth of the attention scores rather than quadratic growth.\n\nBigBird combines three ingredients: a sliding window, a set of global tokens, and randomly chosen connections between positions [1]. The sliding window part works similarly to Longformer, attending to local neighbors. The global tokens and random connections further restrict the attention to a sparse pattern, keeping the computation linear in sequence length while preserving the expressive power of full attention [1].\n\nSo in summary, both Longformer and BigBird reduce the attention cost by restricting the attention scores to only a small subset of tokens around each position, rather than computing for all pairs of tokens [2][1]."
+ },
+ {
+  "id": "three-families",
+  "type": "multi",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 5.6,
+  "answer": "The three families of remedies for the quadratic attention cost are sparse attention, linear attention, and state space models [1]. \n\nSparse attention restricts each token to attend only to a small subset of positions, causing the number of computed scores to grow linearly rather than quadratically with sequence length [2][3]. For example, Longformer uses a sliding window pattern where each token attends to its neighbors within a window of 512 tokens, while still allowing information to propagate beyond the window through designated global tokens and stacking layers [3].\n\nLinear attention replaces the softmax with a kernel feature map, allowing the product of queries and keys to be reassociated and computed in time linear in n. Performer approximates the softmax kernel with positive orthogonal random features, creating an unbiased estimate of the attention matrix without materializing it [2]. The approximation error depends on the number of random features used [2].\n\nState space models combine ingredients like a sliding window, global tokens, and randomly chosen connections between positions to create a universal approximator of sequence functions while using only linear memory [4]. BigBird, for instance, proved that this sparse mechanism is Turing complete, preserving the expressive power of full attention while keeping memory usage linear [4]."
+ },
+ {
+  "id": "three-families",
+  "type": "multi",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 7,
+  "docs": 2,
+  "seconds": 5.7,
+  "answer": "The three families of remedies for quadratic attention cost are sparse attention, linear attention, and state space models [1][2][7]. \n\nSparse attention restricts each token to attend only to a small subset of positions, causing the number of computed scores to grow linearly rather than quadratically with sequence length [2.1]. In Longformer, each token attends to its neighbors within a sliding window of 512 tokens, with designated global tokens attending to the whole sequence. Stacking layers allows information to propagate beyond the window, expanding the effective receptive field [2.2].\n\nLinear attention replaces the softmax with a kernel feature map, allowing the product of queries and keys to be reassociated and computed in time linear in n. Performer approximates the softmax kernel with positive orthogonal random features, creating an unbiased estimate of the attention matrix without materializing it. The approximation error depends on the number of random features [2].\n\nState space models process a sequence with a recurrence that carries a fixed-size hidden state, scaling the cost linearly with length [7]. Mamba uses selective state spaces, where the model's parameters are functions of the input, enabling it to decide what to remember or forget at each step. This results in roughly five times higher inference throughput compared to a comparable Transformer [7]."
+ },
+ {
+  "id": "tradeoffs",
+  "type": "multi",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 6.2,
+  "answer": "Sparse attention, linear attention, and state space models each have different trade-offs in terms of computational efficiency, scalability, and expressive power:\n\nSparse attention methods, such as those described in [4] and [2], restrict each token to attend only to a small subset of positions. This reduces the computational cost from quadratic to linear with respect to sequence length, making it more scalable for long inputs. However, sparse attention may lose some accuracy on tasks that require precise recall of distant dependencies, as it limits the receptive field [4][2]. \n\nLinear attention, as discussed in [6], replaces the standard softmax attention with a kernel feature map. This allows the computation to scale linearly with the sequence length n, offering higher inference throughput compared to a comparable Transformer [6]. However, the approximation error of linear attention depends on the number of random features used, which may affect its accuracy [6].\n\nState space models, covered in [3] and [4], process sequences using a recurrence that maintains a fixed-size hidden state. This results in linear scaling of cost with sequence length, similar to linear attention. State space models can achieve higher inference throughput than a comparable Transformer, as reported in [3]. However, they may not capture long-range dependencies as effectively as sparse attention methods, which can keep the expressive power of full attention while using only linear memory [4].\n\nIn summary, sparse attention offers a good balance between scalability and expressive power but may sacrifice some accuracy for distant dependencies. Linear attention provides high throughput but may have approximation errors affecting accuracy. State space models achieve high throughput and linear scaling but might struggle with long-range dependency modeling. The choice among these methods depends on the specific requirements of the task, such as the need for precise recall versus computational efficiency [4][6][2]."
+ },
+ {
+  "id": "tradeoffs",
+  "type": "multi",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": true,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 1,
+  "seconds": 8.1,
+  "answer": "Sparse attention, linear attention, and state space models are three families of remedies to address the quadratic computational and memory costs associated with self-attention mechanisms in Transformers when dealing with long sequences. Each approach has its own trade-offs:\n\nSparse attention restricts each token to attend only to a small subset of positions, which keeps the number of computed scores growing linearly rather than quadratically with sequence length. This makes sparse attention hardware-friendly and scalable to long inputs [5]. However, the choice of subset pattern can affect the model's accuracy, especially for tasks that require precise recall of distant dependencies [1]. Sparse attention also maintains the expressive power of full attention, being a universal approximator of sequence functions and Turing complete [4].\n\nLinear attention replaces the softmax attention scores with a kernel feature map, allowing the computation to be performed in time linear in the sequence length n. This makes linear attention attractive for very long inputs and scales well with increasing sequence lengths [6]. However, linear attention can lose accuracy compared to full attention, particularly for tasks that need precise recall of distant dependencies [1]. Additionally, linear attention may not be optimal for tasks requiring a deep understanding of long-range dependencies.\n\nState space models process a sequence using a recurrence that carries a fixed-size hidden state. The cost of state space models scales linearly with the sequence length, making them efficient for long inputs [3]. The selective state space approach, called selective state spaces, allows the model to decide what to remember or forget at each step, further improving efficiency [3]. State space models have demonstrated roughly five times higher inference throughput than a comparable Transformer [3]. However, the fixed-size hidden state may limit the model's ability to capture very long-range dependencies, potentially impacting accuracy for tasks that require precise recall of distant information.\n\nIn summary, sparse attention offers hardware-friendliness and scalability but may sacrifice accuracy depending on the subset pattern chosen. Linear attention provides attractive scalability for very long inputs but can lose accuracy for tasks requiring precise recall of distant dependencies. State space models efficiently scale with sequence length and allow selective attention but may struggle with capturing very long-range dependencies due to the fixed-size hidden state. The choice of approach depends on the specific requirements of the task, such as the need for precise recall of distant dependencies or the importance of computational efficiency for long sequences [1][3][4][5]."
+ },
+ {
+  "id": "cross-doc-params",
+  "type": "multi",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": false,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 6,
+  "docs": 2,
+  "seconds": 4.7,
+  "answer": "The parameter count for BERT is reported in Table 3 of [2]. BERTBASE has 110 million parameters, while BERTLARGE has 340 million parameters [2]. \n\nIn contrast, the parameter count for SpectralRepNet is reported in Table II of [1]. SpectralRepNet uses a lightweight architecture with only 21,000 parameters [1]. \n\nSo in summary, BERT has orders of magnitude more parameters (110M to 340M) compared to SpectralRepNet's 21k parameters [2][1]."
+ },
+ {
+  "id": "cross-doc-params",
+  "type": "multi",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": true,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 4.9,
+  "answer": "The BERT models reported in the sources have significantly higher parameter counts compared to SpectralRepNet. BERTBASE contains 110 million parameters [9], while BERTLARGE contains 340 million parameters [9]. In contrast, SpectralRepNet achieves real-time performance on edge hardware with only 0.38 million parameters [10]. Therefore, BERT models have parameters that are 300-900 times greater than the parameter count of SpectralRepNet [9][10]."
+ },
+ {
+  "id": "themes",
+  "type": "global",
+  "graph": false,
+  "judged": {
+   "gate": false,
+   "evidence": null,
+   "keywords": false,
+   "citations": false
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.5,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "themes",
+  "type": "global",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": false,
+   "citations": true
+  },
+  "sources": 10,
+  "docs": 2,
+  "seconds": 6.6,
+  "answer": "The main themes across these documents are:\n\n1. Efficient attention mechanisms in deep learning models, particularly Transformers, which allow for processing long sequences of data but increase computational complexity [1].\n\n2. BERT (Bidirectional Encoder Representations from Transformers), a pre-training framework for deep bidirectional Transformers that enables models to fuse left and right context, improving performance on various NLP tasks [6][7][9].\n\n3. The importance of bidirectional pre-training for language representations, contrasting with previous approaches that used unidirectional language models or shallow concatenations of left-to-right and right-to-left models [10].\n\n4. BERT's unified architecture that can handle a variety of downstream tasks, including single sentence and sentence pair tasks, by simply swapping in task-specific inputs and outputs and fine-tuning all parameters end-to-end [7][8].\n\n5. The use of masked language models and a \"next sentence prediction\" task during pre-training to jointly train text-pair representations, which contribute to BERT's state-of-the-art performance on eleven NLP tasks [10].\n\n6. The availability of BERT's code and pre-trained models, making it accessible for further research and applications in natural language processing [10]."
+ },
+ {
+  "id": "out-moon",
+  "type": "unrelated",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.8,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "out-moon",
+  "type": "unrelated",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.4,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "out-france",
+  "type": "unrelated",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.5,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "out-france",
+  "type": "unrelated",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.5,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "out-bread",
+  "type": "unrelated",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.4,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "out-bread",
+  "type": "unrelated",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.5,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "out-mortgage",
+  "type": "unrelated",
+  "graph": false,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.5,
+  "answer": "The provided documents do not contain enough information to answer this."
+ },
+ {
+  "id": "out-mortgage",
+  "type": "unrelated",
+  "graph": true,
+  "judged": {
+   "gate": true,
+   "evidence": null,
+   "keywords": null,
+   "citations": null
+  },
+  "sources": 0,
+  "docs": 0,
+  "seconds": 1.4,
+  "answer": "The provided documents do not contain enough information to answer this."
+ }
+]
