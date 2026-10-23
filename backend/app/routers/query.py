@@ -32,8 +32,8 @@ class QueryIn(BaseModel):
     generate: bool = True
     rerank: bool = True  # False = RRF order only; lets you ablate the cross-encoder
     use_graph: bool = True  # False = plain hybrid RAG only; lets you compare with and without the graph
-    verify_claims: bool = True  # check every cited sentence against its cited sources with an NLI model
-    general_knowledge: bool = False  # if the documents don't cover the question, let the LLM answer (clearly marked)
+    verify_claims: bool = False  # check every cited sentence against its cited sources with an NLI model
+    general_knowledge: bool = True  # if the documents don't cover the question, let the LLM answer (clearly marked)
 
 
 def _dump(c: Candidate, n: int) -> dict:
@@ -46,7 +46,7 @@ def _dump(c: Candidate, n: int) -> dict:
 
 
 async def _retrieve_part(q: QueryIn, text: str, k: int):
-    """Hybrid search + paper preference + rerank for one (sub-)question. Returns (top, reranked, targets, n_cands)."""
+    """Hybrid search + paper preference + rerank for one (sub-)question. Returns (top, reranked, targets, n_cands, vec)."""
     vec = await asyncio.to_thread(get_embedder().embed_query, text)
     targets: list[UUID] = []
     async with db.pool().acquire() as conn:
@@ -61,7 +61,7 @@ async def _retrieve_part(q: QueryIn, text: str, k: int):
         top, reranked = await asyncio.to_thread(rerank, text, cands, k, set(targets), settings.doc_prefer_bonus)
     else:
         top, reranked = cands[:k], False
-    return top, reranked, targets, len(cands)
+    return top, reranked, targets, len(cands), vec
 
 
 async def _retrieve(q: QueryIn) -> tuple[list[Candidate], dict]:
@@ -79,13 +79,14 @@ async def _retrieve(q: QueryIn) -> tuple[list[Candidate], dict]:
                      await conn.fetch("SELECT id, title FROM documents WHERE id = ANY($1::uuid[])", targets)}
     return top, {"total_retrieval_ms": int((time.perf_counter() - t0) * 1e3), "candidates": sum(r[3] for r in results),
                  "reranked": all(r[1] for r in results), "targeted_docs": len(targets), "focus": focus, "thresholds": thresholds,
-                 "parts": parts if len(parts) > 1 else []}
+                 "parts": parts if len(parts) > 1 else [], "_vec": results[0][4] if len(parts) == 1 else None}
 
 
 @router.post("/search")
 async def search(q: QueryIn):
     """Retrieval only (no LLM): for evaluating chunking/retrieval quality in isolation."""
     top, timing = await _retrieve(q)
+    timing.pop("_vec", None)
     return {"results": [_dump(c, i) for i, c in enumerate(top, 1)], "relevant": is_relevant(top, timing["reranked"], timing.get("thresholds")),
             "timing": timing}
 
@@ -94,9 +95,11 @@ async def search(q: QueryIn):
 async def graph_link(q: QueryIn):
     """Debug view of step 8: which graph nodes does this question link to, and which signal found each?"""
     top, timing = await _retrieve(q)
+    vec = timing.pop("_vec", None)
     if not is_relevant(top, timing["reranked"], timing.get("thresholds")):
         return {"nodes": [], "relevant": False}
-    vec = await asyncio.to_thread(get_embedder().embed_query, q.question)
+    if vec is None:
+        vec = await asyncio.to_thread(get_embedder().embed_query, q.question)
     async with db.pool().acquire() as conn:
         nodes = await link_entities(conn, q.question, vec, [c.chunk_id for c in top])
     return {"relevant": True, "nodes": [{"id": n.node_id, "name": n.name, "type": n.node_type, "score": round(n.score, 5),
@@ -119,27 +122,15 @@ async def communities_list():
 @router.post("/query")
 async def query(q: QueryIn):
     t0 = time.perf_counter()
-    top, timing = await _retrieve(q)
-    relevant = is_relevant(top, timing["reranked"], timing.get("thresholds"))
-    focus = timing.get("focus", {})  # papers the question names, e.g. {"<id>": "BERT: Pre-training of ..."}
-    top = [c for c in top if str(c.document_id) in focus] + [c for c in top if str(c.document_id) not in focus]
-    answer, llm_error = None, None
-    gctx, overview = GraphContext(), []
-    vec = None
-    if q.use_graph and is_global_question(q.question):
-        # "What are the main themes?" has no best chunk, so the chunk gate would refuse it. A matching community
-        # summary is the evidence of coverage instead.
-        vec = await asyncio.to_thread(get_embedder().embed_query, q.question)
-        async with db.pool().acquire() as conn:
-            overview = [(r["title"], r["summary"]) for r in await best_overviews(conn, vec)]
-        relevant = relevant or bool(overview)
     intent, structured = "chunk", None
+    vec = None
+    top: list[Candidate] = []
+    timing: dict = {}
+
+    # Fast path for structured graph intents (profile / path / aggregate): check graph first (~25ms)
     if q.use_graph and not q.document_ids and classify_intent(q.question) != "chunk":
-        # Questions that need facts gathered from many places (an entity's profile, a chain between two entities, which
-        # papers say X) are answered from the graph's structured results; if the graph cannot support the question the
-        # normal pipeline below handles it, so these never get a worse answer than before.
-        if vec is None:
-            vec = await asyncio.to_thread(get_embedder().embed_query, q.question)
+        t_ret = time.perf_counter()
+        vec = await asyncio.to_thread(get_embedder().embed_query, q.question)
         async with db.pool().acquire() as conn:
             structured = await build_structured(conn, classify_intent(q.question), q.question)
             if structured is not None:
@@ -147,9 +138,30 @@ async def query(q: QueryIn):
                 structured = structured if sources else None
         if structured is not None:
             intent, relevant = structured.intent, True
-            have = {c.chunk_id for c in sources}
-            top = sources + ([c for c in top if c.chunk_id not in have][:2] if is_relevant(top, timing["reranked"], timing.get("thresholds")) else [])
+            top = sources
             gctx = GraphContext(facts=structured.facts, hops=max((f.hop for f in structured.facts), default=1))
+            timing = {"total_retrieval_ms": int((time.perf_counter() - t_ret) * 1e3), "candidates": len(sources),
+                      "reranked": False, "targeted_docs": 0, "focus": {}, "thresholds": {}, "parts": []}
+
+    if structured is None:
+        top, timing = await _retrieve(q)
+        vec = timing.pop("_vec", None)
+        relevant = is_relevant(top, timing["reranked"], timing.get("thresholds"))
+        focus = timing.get("focus", {})
+        top = [c for c in top if str(c.document_id) in focus] + [c for c in top if str(c.document_id) not in focus]
+        gctx = GraphContext()
+    else:
+        focus = {}
+
+    answer, llm_error = None, None
+    overview = []
+    if q.use_graph and is_global_question(q.question):
+        if vec is None:
+            vec = await asyncio.to_thread(get_embedder().embed_query, q.question)
+        async with db.pool().acquire() as conn:
+            overview = [(r["title"], r["summary"]) for r in await best_overviews(conn, vec)]
+        relevant = relevant or bool(overview)
+
     if structured is not None:
         pass
     elif not relevant:
@@ -160,20 +172,46 @@ async def query(q: QueryIn):
         async with db.pool().acquire() as conn:
             gctx = await build_graph_context(conn, q.question, vec, top)
         top = top + gctx.extra
+
+    used_general = False
     if q.generate:
         try:
             if relevant:
                 answer = await generate_answer(q.question, top, gctx.facts, overview, list(focus.values()),
                                               timing.get("parts"), intent if structured is not None else None)
+                if answer.refused and structured is not None:
+                    # Structured graph fast-path lacked the specific passage; fall back to full hybrid retrieval
+                    structured, intent = None, "chunk"
+                    top, timing = await _retrieve(q)
+                    vec = timing.pop("_vec", None)
+                    relevant = is_relevant(top, timing["reranked"], timing.get("thresholds"))
+                    focus = timing.get("focus", {})
+                    top = [c for c in top if str(c.document_id) in focus] + [c for c in top if str(c.document_id) not in focus]
+                    gctx = GraphContext()
+                    if relevant and q.use_graph:
+                        if vec is None:
+                            vec = await asyncio.to_thread(get_embedder().embed_query, q.question)
+                        async with db.pool().acquire() as conn:
+                            gctx = await build_graph_context(conn, q.question, vec, top)
+                        top = top + gctx.extra
+                    if relevant:
+                        answer = await generate_answer(q.question, top, gctx.facts, overview, list(focus.values()),
+                                                      timing.get("parts"), None)
+                if answer.refused and q.general_knowledge:
+                    answer = await generate_general(q.question)
+                    used_general = True
             elif q.general_knowledge:
                 answer = await generate_general(q.question)
+                used_general = True
             else:
                 answer = Answer(NO_ANSWER, [], [], [], True)
         except Exception as e:  # noqa: BLE001 — never lose the retrieved passages because the LLM is down
             llm_error = f"{type(e).__name__}: {e}"[:400]
+
     verification: dict = {"enabled": False}
-    if q.verify_claims and relevant and answer is not None and not answer.refused and top:
+    if q.verify_claims and relevant and not used_general and answer is not None and not answer.refused and top:
         verification = await nli_worker.verify(answer.text, [c.text for c in top])
+
     total_ms = int((time.perf_counter() - t0) * 1e3)
     async with db.pool().acquire() as conn:
         await conn.execute(
@@ -188,7 +226,7 @@ async def query(q: QueryIn):
         "llm_model": answer.model if answer else None,
         "refused": answer.refused if answer else None,
         "relevant": relevant,
-        "source": "documents" if relevant else ("general_knowledge" if q.general_knowledge and answer else "none"),
+        "source": "general_knowledge" if used_general else ("documents" if relevant else "none"),
         "cited": answer.cited if answer else [],
         "invalid_citations": answer.invalid_citations if answer else [],
         "uncited_sentences": answer.uncited_sentences if answer else [],

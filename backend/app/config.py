@@ -38,9 +38,9 @@ class Settings(BaseSettings):
     cloud_order: str = "groq,gemini"
     cloud_allow_local_fallback: bool = True
     groq_api_key: str = ""
-    groq_model: str = "llama-3.3-70b-versatile"  # model names change; override via env if rejected
+    groq_model: str = "openai/gpt-oss-20b"  # model names change; override via env if rejected
     gemini_api_key: str = ""
-    gemini_model: str = "gemini-2.0-flash"
+    gemini_model: str = "gemini-3.1-flash-lite-preview"
     llm_settings_path: str = "data/llm_settings.json"  # persisted mode/model/order (no keys)
 
     # Question -> graph node linking (starting values; tune against real questions)
@@ -70,7 +70,7 @@ class Settings(BaseSettings):
     # Semantic citation check with an NLI model (see app/nli.py). The hub id downloads ~4.5 GB of variants; this machine
     # keeps just the weights it needs on D: and points here with ARIADNE_NLI_MODEL in .env.
     nli_model: str = "cross-encoder/nli-deberta-v3-small"
-    nli_warmup: bool = True                # False = do not start the NLI worker at startup (saves ~3 GB; claims then stay unverified)
+    nli_warmup: bool = False               # False = do not start the NLI worker at startup (saves ~3 GB; claims then stay unverified)
     nli_entail_cutoff: float = 0.5         # entailment probability needed to call a claim supported
     nli_contradiction_cutoff: float = 0.9  # contradiction is called only when very sure (it misfires on true claims)
     nli_premise_sentences: int = 3         # the most claim-relevant sentences of a cited chunk form the premise

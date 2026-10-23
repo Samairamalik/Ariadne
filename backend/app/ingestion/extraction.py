@@ -9,6 +9,7 @@ import logging
 import re
 from dataclasses import dataclass, replace
 
+from app.ingestion.entity_filter import is_main_entity
 from app.llm.providers import LLMError, LLMUnavailable
 from app.retrieval.doc_aware import anchors
 
@@ -133,7 +134,8 @@ def entity_supported(name: str, quote: str, subject: str | None = None) -> bool:
 def verify_triples(triples: list["Triple"], subject: str | None = None) -> list["Triple"]:
     """Drop triples whose subject or object is not stated in their own evidence quote."""
     return [t for t in triples if entity_supported(t.subject, t.evidence, subject)
-            and entity_supported(t.object, t.evidence, subject)]
+            and entity_supported(t.object, t.evidence, subject)
+            and is_main_entity(t.subject, t.subject_type) and is_main_entity(t.object, t.object_type)]
 
 
 def _clean(v, limit: int) -> str:

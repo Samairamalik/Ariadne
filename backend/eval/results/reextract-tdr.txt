@@ -1,0 +1,1 @@
+/c/Users/advi/.pyenv/pyenv-win/shims/python: line 2:   830 Segmentation fault      pyenv exec $(basename "$0") "$@"

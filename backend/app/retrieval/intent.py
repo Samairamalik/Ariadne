@@ -15,9 +15,9 @@ _PATH = re.compile(
     r"|(?:relationship|connection|link|relation)s?\s+between\b)", re.I)
 _PROFILE = re.compile(
     r"\b(?:tell me everything|summari[sz]e everything|everything\s+(?:that\s+)?(?:the\s+)?(?:library|documents?|papers?|corpus)\s+"
-    r"(?:says?|knows?|contains?)|what does the (?:library|corpus) say|all (?:the )?(?:facts|information) (?:about|on))\b", re.I)
+    r"(?:says?|knows?|contains?)|what do(?:es)? (?:my |the )?(?:library|corpus|documents?|papers?) say|all (?:the )?(?:facts|information) (?:about|on))\b", re.I)
 _AGGREGATE = re.compile(
-    r"^\s*(?:which|what)\s+(?:papers?|documents?|sources?|models?|methods?|datasets?)\b.*\b"
+    r"^\s*(?:which|what)\s+(?:papers?|documents?|sources?)\b.*\b"
     r"(?:use|uses|used|using|train|trains|trained|report|reports|discuss|discusses|mention|mentions|describe|describes|"
     r"evaluate|evaluates|include|includes|introduce|introduces|employ|employs)\b", re.I)
 

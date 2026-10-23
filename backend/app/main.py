@@ -1,12 +1,18 @@
 import logging
+import os
+import threading
 from contextlib import asynccontextmanager
+
+from app.config import settings
+
+if settings.embed_device == "cpu" and settings.rerank_device == "cpu":
+    os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-
 from app import db, nli_worker
-from app.config import settings
+from app.embeddings import get_embedder
 from app.ingestion.pipeline import recover_interrupted
 from app.retrieval import rerank
 from app.routers import documents, graph, graph_views, llm, query
@@ -20,6 +26,7 @@ async def lifespan(_: FastAPI):
     if n := await recover_interrupted():
         logging.getLogger("ariadne").warning("closed %d graph job(s) interrupted by a restart", n)
     rerank.start_loading()
+    threading.Thread(target=get_embedder, name="embedder-load", daemon=True).start()
     if settings.nli_warmup:
         nli_worker.warm_up()  # starts the NLI worker process and loads its model before the first question
     yield

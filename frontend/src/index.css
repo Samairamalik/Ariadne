@@ -2,18 +2,19 @@
 
 @layer base {
   :root {
-    --bg-dark: #07060e;
-    --neon-pink: #ff2d9b;
-    --neon-cyan: #00f0ff;
-    --neon-purple: #9d00ff;
-    --neon-green: #00ff88;
-    --neon-amber: #ffaa00;
-    --neon-crimson: #ff1744;
+    --bg-dark: #080a0a;
+    --accent-gold: #e5b869;
+    --accent-jade: #5ec2a8;
+    --accent-terracotta: #e07a5f;
+    --accent-slate: #7ba7bc;
+    --accent-sage: #95c687;
+    --accent-cinnabar: #d9534f;
+    --text-ivory: #f3efe6;
   }
 
   body {
-    background-color: #07060e;
-    color: #e8e4f5;
+    background-color: #080a0a;
+    color: #f3efe6;
     font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
   }
@@ -31,51 +32,47 @@
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Glassmorphism Classes */
+/* Warm Obsidian & Brass Observatory Glassmorphism */
 .glass-panel {
-  background: rgba(12, 10, 24, 0.65);
-  backdrop-filter: blur(24px) saturate(160%);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(14, 17, 16, 0.74);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid rgba(229, 184, 105, 0.14);
 }
 
 .glass-panel-subtle {
-  background: rgba(15, 12, 30, 0.45);
+  background: rgba(17, 21, 20, 0.52);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(243, 239, 230, 0.08);
 }
 
 .glass-panel-glow {
-  background: rgba(14, 11, 28, 0.75);
-  backdrop-filter: blur(30px) saturate(180%);
-  border: 1px solid rgba(0, 240, 255, 0.2);
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.08), inset 0 0 20px rgba(255, 45, 155, 0.04);
+  background: rgba(15, 19, 18, 0.82);
+  backdrop-filter: blur(30px) saturate(150%);
+  border: 1px solid rgba(229, 184, 105, 0.28);
+  box-shadow: 0 0 32px rgba(229, 184, 105, 0.08), inset 0 0 20px rgba(94, 194, 168, 0.04);
 }
 
-/* Ethereal Glow Shadows */
-.glow-pink {
-  box-shadow: 0 0 25px rgba(255, 45, 155, 0.4), 0 0 50px rgba(255, 45, 155, 0.15);
+/* Warm Astrolabe Glow Shadows */
+.glow-gold {
+  box-shadow: 0 0 24px rgba(229, 184, 105, 0.35), 0 0 48px rgba(229, 184, 105, 0.12);
 }
 
-.glow-cyan {
-  box-shadow: 0 0 25px rgba(0, 240, 255, 0.4), 0 0 50px rgba(0, 240, 255, 0.15);
+.glow-jade {
+  box-shadow: 0 0 24px rgba(94, 194, 168, 0.35), 0 0 48px rgba(94, 194, 168, 0.12);
 }
 
-.glow-crimson {
-  box-shadow: 0 0 25px rgba(255, 23, 68, 0.45), 0 0 50px rgba(255, 23, 68, 0.2);
+.glow-terracotta {
+  box-shadow: 0 0 24px rgba(224, 122, 95, 0.35), 0 0 48px rgba(224, 122, 95, 0.12);
 }
 
-.glow-purple {
-  box-shadow: 0 0 25px rgba(157, 0, 255, 0.4), 0 0 50px rgba(157, 0, 255, 0.15);
-}
-
-/* Background Cosmic Gradients */
+/* Background Observatory Atmosphere (Obsidian, Warm Gold, Verdigris Jade, Terracotta) */
 .bg-ethereal-space {
-  background: 
-    radial-gradient(1000px 600px at 15% 15%, rgba(255, 45, 155, 0.14), transparent 60%),
-    radial-gradient(900px 500px at 85% 20%, rgba(0, 240, 255, 0.12), transparent 55%),
-    radial-gradient(800px 600px at 50% 90%, rgba(157, 0, 255, 0.1), transparent 60%),
-    linear-gradient(180deg, #05040a 0%, #080712 50%, #05040a 100%);
+  background:
+    radial-gradient(1100px 650px at 16% 14%, rgba(229, 184, 105, 0.09), transparent 62%),
+    radial-gradient(950px 550px at 84% 20%, rgba(94, 194, 168, 0.08), transparent 58%),
+    radial-gradient(850px 600px at 50% 92%, rgba(224, 122, 95, 0.07), transparent 62%),
+    linear-gradient(180deg, #060808 0%, #0b0e0e 52%, #060808 100%);
 }
 
 /* Custom Scrollbar */
@@ -85,16 +82,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(10, 8, 20, 0.6);
+  background: rgba(10, 13, 12, 0.6);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(229, 184, 105, 0.22);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 240, 255, 0.4);
+  background: rgba(229, 184, 105, 0.45);
 }
 
 /* Animations */

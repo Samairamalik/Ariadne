@@ -72,8 +72,13 @@ def build_graph(rows: list, allow: set) -> nx.Graph:
 def steps_for_path(g: nx.Graph, path: list) -> list[dict]:
     """The facts along one path, one step per hop, each with the quote and paper of its best edge."""
     steps = []
+    used_ids = set()
     for a, b in zip(path, path[1:]):
-        r = sorted(g.edges[a, b]["rows"], key=lambda x: (x["doc_title"], x["chunk_index"] or 0))[0]
+        rows = g.edges[a, b]["rows"]
+        unused = [x for x in rows if x.get("id") not in used_ids] or rows
+        r = sorted(unused, key=lambda x: (x["doc_title"], x["chunk_index"] or 0))[0]
+        if r.get("id"):
+            used_ids.add(r["id"])
         steps.append({**fact_dict(r), "from": g.nodes[a]["name"], "to": g.nodes[b]["name"],
                       "direction": "forward" if r["source_id"] == a else "reverse"})
     return steps
@@ -122,23 +127,48 @@ async def entities_in_question(conn, question: str, cutoff: int = 88) -> list[di
     nodes = [dict(r) for r in rows if is_specific_name(r["canonical_name"]) and r["documents"] > 0]
     found = phrase_matches(candidate_phrases(question), nodes, cutoff)
     low = question.lower()
+    if not found:
+        all_with_docs = [dict(r) for r in rows if r["documents"] > 0 and len(r["canonical_name"]) >= 2]
+        for n in sorted(all_with_docs, key=lambda x: (-len(x["canonical_name"]), -x["documents"], -x["mention_count"])):
+            cname = n["canonical_name"].lower()
+            if cname in low:
+                found.append({"node": n, "phrase": cname, "score": 100})
+                break
     return sorted(found, key=lambda m: low.find(m["phrase"]))
 
 
 async def find_nodes(conn, name: str, limit: int = 5) -> list[dict]:
-    """Nodes whose name or alias matches `name` (exact first, then close spellings)."""
+    """Nodes whose name or alias matches `name` (exact first, then close spellings, then substring/partial matches)."""
     q = name.lower().strip()
     rows = await conn.fetch(
         """SELECT n.id, n.canonical_name, n.node_type, n.mention_count, n.aliases,
                   (SELECT count(DISTINCT e.document_id) FROM edges e WHERE n.id IN (e.source_id, e.target_id)) AS documents
            FROM nodes n""")
     scored = []
+    partial_scored = []
     for r in rows:
-        score = max([fuzz.ratio(q, r["canonical_name"].lower()), *(fuzz.ratio(q, a.lower()) for a in r["aliases"] or [])])
-        if score >= 85 and r["documents"] > 0:
+        if r["documents"] <= 0:
+            continue
+        cname = r["canonical_name"].lower()
+        aliases = [a.lower() for a in (r["aliases"] or [])]
+        score = max([fuzz.ratio(q, cname), *(fuzz.ratio(q, a) for a in aliases)])
+        if score >= 85:
             scored.append((score, r["documents"], r["mention_count"], dict(r)))
+        elif len(q) >= 3:
+            all_names = [cname, *aliases]
+            if any(q in nm or nm in q for nm in all_names):
+                pscore = max(80.0, max(fuzz.partial_ratio(q, nm) for nm in all_names) * 0.9)
+                partial_scored.append((pscore, r["documents"], r["mention_count"], dict(r)))
     scored.sort(key=lambda x: (-x[0], -x[1], -x[2]))
-    return [{**x[3], "match": x[0]} for x in scored[:limit]]
+    if len(scored) < limit and partial_scored:
+        partial_scored.sort(key=lambda x: (-x[0], -x[1], -x[2]))
+        seen_ids = {x[3]["id"] for x in scored}
+        for item in partial_scored:
+            if item[3]["id"] not in seen_ids:
+                scored.append(item)
+                if len(scored) >= limit:
+                    break
+    return [{**x[3], "match": round(x[0], 1)} for x in scored[:limit]]
 
 
 async def entity_profile(conn, node_id: UUID) -> dict | None:
@@ -150,9 +180,67 @@ async def entity_profile(conn, node_id: UUID) -> dict | None:
     return group_profile(dict(node), rows)
 
 
+def _build_bridged_graph(rows: list, allow: set) -> nx.Graph:
+    """When strict UUID edges do not connect two entities (because LLM extraction created compound phrase nodes like
+    'multi-layer bidirectional Transformer encoder' instead of linking directly to 'Transformer', or facts sit in the
+    same passage chunk), add virtual lexical/chunk bridges backed by the concrete fact rows so multi-hop paths resolve."""
+    g = nx.Graph()
+    node_names: dict[UUID, str] = {}
+    node_best_row: dict[UUID, dict] = {}
+    by_chunk: dict[UUID, list[tuple[UUID, dict]]] = defaultdict(list)
+
+    for r in rows:
+        sid, tid = r["source_id"], r["target_id"]
+        if sid == tid:
+            continue
+        node_names[sid] = r["s"]
+        node_names[tid] = r["t"]
+        node_best_row.setdefault(sid, r)
+        node_best_row.setdefault(tid, r)
+        g.add_node(sid, name=r["s"])
+        g.add_node(tid, name=r["t"])
+        g.add_edge(sid, tid)
+        g.edges[sid, tid].setdefault("rows", []).append(r)
+        if r["chunk_id"]:
+            by_chunk[r["chunk_id"]].append((sid, r))
+            by_chunk[r["chunk_id"]].append((tid, r))
+
+    canonical_anchors = [
+        (nid, name, re.compile(r"\b" + re.escape(name.lower()) + r"\b"))
+        for nid, name in node_names.items()
+        if len(name) >= 4 and (nid in allow or is_specific_name(name)) and len(name.split()) <= 3
+    ]
+    for anchor_id, anchor_name, pat in canonical_anchors:
+        alow = anchor_name.lower()
+        for other_id, other_name in node_names.items():
+            if anchor_id == other_id or g.has_edge(anchor_id, other_id):
+                continue
+            olow = other_name.lower()
+            if len(olow) > len(alow) and (pat.search(olow) or (len(alow) >= 4 and alow in olow)):
+                bridge_rows = [r for r in (node_best_row.get(anchor_id), node_best_row.get(other_id)) if r]
+                if bridge_rows:
+                    g.add_edge(anchor_id, other_id)
+                    g.edges[anchor_id, other_id].setdefault("rows", []).extend(bridge_rows)
+
+    for cid, items in by_chunk.items():
+        if len(items) < 2:
+            continue
+        head_id, head_row = items[0]
+        for other_id, other_row in items[1:]:
+            if head_id != other_id and not g.has_edge(head_id, other_id):
+                g.add_edge(head_id, other_id)
+                g.edges[head_id, other_id].setdefault("rows", []).append(other_row)
+
+    return g
+
+
 async def find_paths(conn, a_id: UUID, b_id: UUID, max_hops: int = 3, k: int = 3) -> list[dict]:
     rows = await conn.fetch(EDGE_SQL)
-    return paths_between(build_graph(rows, {a_id, b_id}), a_id, b_id, max_hops, k)
+    strict = paths_between(build_graph(rows, {a_id, b_id}), a_id, b_id, max_hops, k)
+    if strict:
+        return strict
+    bridged = _build_bridged_graph(rows, {a_id, b_id})
+    return paths_between(bridged, a_id, b_id, max(max_hops, 4), k)
 
 
 async def aggregate_documents(conn, node_id: UUID, predicate: str | None = None) -> list[dict]:

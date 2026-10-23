@@ -69,7 +69,7 @@ class OllamaProvider:
 
     async def chat(self, messages, *, json_mode, temperature, timeout) -> str:
         payload = {"model": self.model(), "stream": False, "messages": messages,
-                   "options": {"temperature": temperature, "num_ctx": 8192}}
+                   "options": {"temperature": temperature, "num_ctx": 2048}}
         if json_mode:
             payload["format"] = "json"
         try:
@@ -78,8 +78,18 @@ class OllamaProvider:
                 if r.status_code >= 500:
                     # e.g. "CUDA device busy/unavailable": a small model still runs on CPU
                     log.warning("Ollama failed on default device (%s); retrying on CPU", _err_text(r)[:120])
-                    payload["options"]["num_gpu"] = 0
+                    payload["options"] = {"temperature": temperature, "num_ctx": 1024, "num_gpu": 0}
                     r = await c.post(f"{settings.ollama_url}/api/chat", json=payload)
+                if r.status_code >= 500:
+                    # If the selected model still exceeds Windows commit charge, try a lighter installed model
+                    for alt in ("qwen2.5:0.5b", *(await self.list_models())):
+                        if alt != self.model():
+                            log.warning("Ollama model %s OOM; falling back to lighter local model %s", self.model(), alt)
+                            payload["model"] = alt
+                            payload["options"] = {"temperature": temperature, "num_ctx": 2048}
+                            r = await c.post(f"{settings.ollama_url}/api/chat", json=payload)
+                            if r.status_code < 400:
+                                break
         except httpx.HTTPError as e:
             raise LLMError(self.name, f"cannot reach Ollama at {settings.ollama_url} ({type(e).__name__})") from e
         if r.status_code >= 400:
@@ -96,33 +106,57 @@ class OllamaProvider:
 
 class GroqProvider:
     name = "groq"
+    FALLBACK_MODELS = ("openai/gpt-oss-20b", "qwen/qwen3.8-27b", "openai/gpt-oss-120b")
 
     def configured(self) -> bool:
-        return bool(settings.groq_api_key)
+        return bool(settings.groq_api_key.strip())
 
     def model(self) -> str:
         return settings.groq_model
 
     async def chat(self, messages, *, json_mode, temperature, timeout) -> str:
-        body = {"model": self.model(), "messages": messages, "temperature": temperature}
-        if json_mode:
-            body["response_format"] = {"type": "json_object"}
+        models_to_try = [self.model(), *[m for m in self.FALLBACK_MODELS if m != self.model()]]
+        headers = {"Authorization": f"Bearer {settings.groq_api_key.strip()}"}
+        last_r = None
+        req_timeout = min(timeout, 30.0)
         try:
-            async with httpx.AsyncClient(timeout=timeout) as c:
-                r = await c.post("https://api.groq.com/openai/v1/chat/completions", json=body,
-                                 headers={"Authorization": f"Bearer {settings.groq_api_key}"})
+            async with httpx.AsyncClient(timeout=req_timeout) as c:
+                for m in models_to_try:
+                    body = {"model": m, "messages": messages, "temperature": temperature}
+                    if m.startswith("openai/gpt-oss"):
+                        body["reasoning_effort"] = "low"  # reasoning tokens count against the free tokens-per-minute limit
+                    if json_mode:
+                        body["response_format"] = {"type": "json_object"}
+                    try:
+                        r = await c.post("https://api.groq.com/openai/v1/chat/completions", json=body, headers=headers)
+                    except httpx.TimeoutException:
+                        log.warning("Groq model %s timed out; trying fallback", m)
+                        continue
+                    if r.status_code == 400 and json_mode and "validate json" in r.text.lower():
+                        # Groq's strict JSON mode rejects some almost-valid output; the prompt already demands JSON
+                        # and the caller parses defensively, so ask again without the strict mode.
+                        log.warning("Groq model %s failed strict JSON mode; retrying without it", m)
+                        body.pop("response_format", None)
+                        r = await c.post("https://api.groq.com/openai/v1/chat/completions", json=body, headers=headers)
+                    last_r = r
+                    if r.status_code in (404, 413, 429, 500, 502, 503) or (r.status_code == 400 and "model" in r.text.lower()):
+                        log.warning("Groq model %s returned %s (%s); trying fallback", m, r.status_code, _err_text(r)[:120])
+                        continue
+                    break
         except httpx.HTTPError as e:
             raise LLMError(self.name, f"network error ({type(e).__name__})") from e
-        if r.status_code >= 400:
-            raise LLMError(self.name, _err_text(r), r.status_code)
-        return r.json()["choices"][0]["message"]["content"]
+        if last_r is None or last_r.status_code >= 400:
+            raise LLMError(self.name, _err_text(last_r) if last_r is not None else "no response",
+                           last_r.status_code if last_r is not None else None)
+        return last_r.json()["choices"][0]["message"]["content"]
 
 
 class GeminiProvider:
     name = "gemini"
+    FALLBACK_MODELS = ("gemini-3.1-flash-lite-preview", "gemini-flash-lite-latest", "gemini-3-flash-preview")
 
     def configured(self) -> bool:
-        return bool(settings.gemini_api_key)
+        return bool(settings.gemini_api_key.strip())
 
     def model(self) -> str:
         return settings.gemini_model
@@ -137,17 +171,32 @@ class GeminiProvider:
         body = {"contents": contents, "generationConfig": gen}
         if system:
             body["systemInstruction"] = {"parts": [{"text": system}]}
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.model()}:generateContent"
+        models_to_try = [self.model(), *[m for m in self.FALLBACK_MODELS if m != self.model()]]
+        last_r, timed_out = None, False
+        req_timeout = min(timeout, 20.0)
         try:
-            async with httpx.AsyncClient(timeout=timeout) as c:
-                # key in a header, not the URL, so it can't leak into logs
-                r = await c.post(url, json=body, headers={"x-goog-api-key": settings.gemini_api_key})
+            async with httpx.AsyncClient(timeout=req_timeout) as c:
+                for m in models_to_try:
+                    url = f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent"
+                    # key in a header, not the URL, so it can't leak into logs
+                    try:
+                        r = await c.post(url, json=body, headers={"x-goog-api-key": settings.gemini_api_key.strip()})
+                    except httpx.TimeoutException:
+                        log.warning("Gemini model %s timed out; trying fallback", m)
+                        timed_out = True
+                        continue
+                    last_r = r
+                    if r.status_code in (404, 429, 500, 502, 503):
+                        log.warning("Gemini model %s returned %s (%s); trying fallback", m, r.status_code, _err_text(r)[:120])
+                        continue
+                    break
         except httpx.HTTPError as e:
             raise LLMError(self.name, f"network error ({type(e).__name__})") from e
-        if r.status_code >= 400:
-            raise LLMError(self.name, _err_text(r), r.status_code)
+        if last_r is None or last_r.status_code >= 400:
+            raise LLMError(self.name, _err_text(last_r) if last_r is not None else ("timed out" if timed_out else "no response"),
+                           last_r.status_code if last_r is not None else None)
         try:
-            return r.json()["candidates"][0]["content"]["parts"][0]["text"]
+            return last_r.json()["candidates"][0]["content"]["parts"][0]["text"]
         except (KeyError, IndexError) as e:
             raise LLMError(self.name, "empty or blocked response") from e
 

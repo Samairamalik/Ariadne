@@ -251,7 +251,7 @@ export interface EntityFactItem {
   section: string
   page: number | null
   chunk_id: string | null
-  direction?: 'in' | 'out'
+  direction?: 'in' | 'out' | 'forward' | 'reverse'
 }
 
 export interface EntityProfileResponse {

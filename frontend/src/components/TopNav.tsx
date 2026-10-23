@@ -1,24 +1,34 @@
-import React from 'react'
-import { 
-  Sparkles, 
-  Search, 
-  BookOpen, 
-  Upload, 
-  Layers, 
-  AlertTriangle, 
-  Activity, 
-  Cpu
+import { useState, useEffect, useRef } from 'react'
+import {
+  Sparkles,
+  Search,
+  BookOpen,
+  Upload,
+  Activity,
+  Route,
+  Orbit,
+  Radio,
 } from 'lucide-react'
+import { graphApi } from '../api/client'
+import { NODE_TYPE_COLORS } from './Graph3D'
+import type { EntitySearchItem, GraphNode } from '../types'
+
+export type AppView = 'graph' | 'query' | 'contradictions' | 'communities' | 'vault'
 
 interface TopNavProps {
-  activeView: 'graph' | 'vault' | 'query' | 'contradictions'
-  setActiveView: (view: 'graph' | 'vault' | 'query' | 'contradictions') => void
+  activeView: AppView
+  setActiveView: (view: AppView) => void
   searchQuery: string
   setSearchQuery: (q: string) => void
+  onSelectSearchResult: (nodeId: string, name: string) => void
+  nodes: GraphNode[]
   backendHealthy: boolean
   rerankerStatus: string
+  llmLabel: string
+  onOpenLLMModal: () => void
   nodeCount: number
   edgeCount: number
+  communityCount: number
   contradictionCount: number
   onUploadClick: () => void
 }
@@ -28,147 +38,245 @@ export function TopNav({
   setActiveView,
   searchQuery,
   setSearchQuery,
+  onSelectSearchResult,
+  nodes,
   backendHealthy,
-  rerankerStatus,
+  llmLabel,
+  onOpenLLMModal,
   nodeCount,
   edgeCount,
+  communityCount,
   contradictionCount,
   onUploadClick,
 }: TopNavProps) {
+  const [results, setResults] = useState<EntitySearchItem[]>([])
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const searchWrapRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const q = searchQuery.trim()
+    if (q.length < 2) {
+      setResults([])
+      return
+    }
+    let cancelled = false
+    const timer = setTimeout(async () => {
+      try {
+        const apiHits = await graphApi.searchEntities(q, 8)
+        if (!cancelled) {
+          if (apiHits.length > 0) {
+            setResults(apiHits)
+          } else {
+            const low = q.toLowerCase()
+            const local = nodes
+              .filter((n) => n.name.toLowerCase().includes(low))
+              .slice(0, 8)
+              .map((n) => ({
+                id: n.id,
+                name: n.name,
+                type: n.type,
+                papers: 1,
+                mentions: n.mention_count,
+                match: 90,
+              }))
+            setResults(local)
+          }
+        }
+      } catch {
+        // fallback local
+      }
+    }, 180)
+    return () => {
+      cancelled = true
+      clearTimeout(timer)
+    }
+  }, [searchQuery, nodes])
+
+  useEffect(() => {
+    const onClickOutside = (e: MouseEvent) => {
+      if (searchWrapRef.current && !searchWrapRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false)
+      }
+    }
+    window.addEventListener('mousedown', onClickOutside)
+    return () => window.removeEventListener('mousedown', onClickOutside)
+  }, [])
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 px-6 py-3.5 flex items-center justify-between pointer-events-auto">
-      {/* Brand Identity & System Telemetry */}
-      <div className="flex items-center gap-6 shrink-0">
-        <div
-          onClick={() => setActiveView('graph')}
-          className="flex items-center gap-3 cursor-pointer group"
-        >
-          <div className="relative w-9 h-9 rounded-xl bg-gradient-to-tr from-[#ff2d9b] via-[#9d00ff] to-[#00f0ff] p-[1.5px] shadow-[0_0_20px_rgba(0,240,255,0.35)] group-hover:shadow-[0_0_30px_rgba(255,45,155,0.6)] transition-all duration-300">
-            <div className="w-full h-full bg-[#090814] rounded-[10px] flex items-center justify-center">
-              <Sparkles className="w-4.5 h-4.5 text-[#00f0ff] animate-pulse" />
-            </div>
-          </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="font-brand font-extrabold text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-white via-[#e8e4f5] to-[#00f0ff]">
-                ARIADNE
-              </span>
-              <span className="text-[10px] font-mono tracking-widest px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-[#00f0ff]">
-                v0.1
-              </span>
-            </div>
-            <p className="text-[10px] font-mono tracking-widest text-[#aea8b9]/60 uppercase">
-              Neural Knowledge Graph & Hybrid RAG
-            </p>
+    <header className="fixed top-0 left-0 right-0 z-40 px-3 py-2 flex items-center justify-between gap-2 w-full box-border pointer-events-auto">
+      {/* Left: Brand & Status */}
+      <div
+        onClick={() => setActiveView('graph')}
+        className="flex items-center gap-2 cursor-pointer shrink-0"
+      >
+        <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-[#e5b869] via-[#c8963e] to-[#5ec2a8] p-[1.5px]">
+          <div className="w-full h-full bg-[#080a0a] rounded-[7px] flex items-center justify-center">
+            <Sparkles className="w-3.5 h-3.5 text-[#e5b869]" />
           </div>
         </div>
-
-        {/* Telemetry Status Pill */}
-        <div className="hidden min-[2300px]:flex items-center gap-3 px-3 py-1.5 rounded-full glass-panel-subtle text-xs font-mono">
-          <div className="flex items-center gap-1.5">
-            <span className={`w-2 h-2 rounded-full ${backendHealthy ? 'bg-[#00ff88] shadow-[0_0_8px_#00ff88]' : 'bg-[#ff1744] shadow-[0_0_8px_#ff1744]'} animate-pulse`} />
-            <span className="text-zinc-300 text-[11px]">{backendHealthy ? 'API ONLINE' : 'API DISCONNECTED'}</span>
-          </div>
-          <span className="w-1 h-3 bg-white/10" />
-          <div className="flex items-center gap-1 text-[11px] text-[#00f0ff]">
-            <Cpu className="w-3.5 h-3.5" />
-            <span>RERANKER: {rerankerStatus.toUpperCase()}</span>
-          </div>
-          <span className="w-1 h-3 bg-white/10" />
-          <div className="flex items-center gap-1 text-[11px] text-zinc-400">
-            <Layers className="w-3.5 h-3.5 text-[#ff2d9b]" />
-            <span>{nodeCount} NODES / {edgeCount} EDGES</span>
-          </div>
+        <div className="flex items-center gap-1.5">
+          <span className="font-brand font-bold text-sm tracking-wider text-[#f3efe6]">
+            ARIADNE
+          </span>
+          <span
+            className={`w-1.5 h-1.5 rounded-full ${
+              backendHealthy
+                ? 'bg-[#5ec2a8] shadow-[0_0_6px_#5ec2a8]'
+                : 'bg-[#d9534f] shadow-[0_0_6px_#d9534f]'
+            }`}
+            title={backendHealthy ? 'Online' : 'Offline'}
+          />
+          <span className="hidden lg:inline text-[10px] font-mono text-zinc-400 ml-1">
+            {nodeCount}n · {edgeCount}e
+          </span>
         </div>
       </div>
 
-      {/* Center Search / Node Probe Bar */}
-      <div className="flex-1 min-w-[220px] max-w-md mx-4">
-        <div className="relative flex items-center">
-          <Search className="absolute left-3.5 w-4 h-4 text-zinc-400 pointer-events-none" />
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search concepts, models, architectures..."
-            className="w-full pl-10 pr-12 py-2 rounded-full glass-panel-subtle text-xs font-mono text-zinc-200 placeholder:text-zinc-500 focus:outline-none focus:border-[#00f0ff]/50 focus:ring-1 focus:ring-[#00f0ff]/30 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
-          />
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery('')}
-              className="absolute right-3.5 text-xs text-zinc-400 hover:text-white"
-            >
-              ×
-            </button>
+      {/* Center: Compact Navigation Pills */}
+      <nav className="flex items-center p-0.5 rounded-full glass-panel border border-[#e5b869]/15 shadow-md overflow-x-auto max-w-full">
+        <button
+          onClick={() => setActiveView('graph')}
+          className={`px-2.5 py-1 rounded-full text-[11px] font-medium flex items-center gap-1 whitespace-nowrap transition-all cursor-pointer ${
+            activeView === 'graph'
+              ? 'bg-gradient-to-r from-[#e5b869]/25 to-[#5ec2a8]/20 text-[#f3efe6] border border-[#e5b869]/50'
+              : 'text-zinc-400 hover:text-zinc-200 hover:bg-white/5'
+          }`}
+        >
+          <Activity className="w-3 h-3 text-[#e5b869]" />
+          <span>Graph</span>
+        </button>
+
+        <button
+          onClick={() => setActiveView('query')}
+          className={`px-2.5 py-1 rounded-full text-[11px] font-medium flex items-center gap-1 whitespace-nowrap transition-all cursor-pointer ${
+            activeView === 'query'
+              ? 'bg-gradient-to-r from-[#e5b869]/25 to-[#e07a5f]/20 text-[#f3efe6] border border-[#e5b869]/50'
+              : 'text-zinc-400 hover:text-zinc-200 hover:bg-white/5'
+          }`}
+        >
+          <Sparkles className="w-3 h-3 text-[#e07a5f]" />
+          <span>Ask AI</span>
+        </button>
+
+        <button
+          onClick={() => setActiveView('contradictions')}
+          className={`px-2.5 py-1 rounded-full text-[11px] font-medium flex items-center gap-1 whitespace-nowrap transition-all cursor-pointer ${
+            activeView === 'contradictions'
+              ? 'bg-gradient-to-r from-[#5ec2a8]/25 to-[#e5b869]/20 text-[#f3efe6] border border-[#5ec2a8]/50'
+              : 'text-zinc-400 hover:text-zinc-200 hover:bg-white/5'
+          }`}
+        >
+          <Route className="w-3 h-3 text-[#5ec2a8]" />
+          <span>Paths</span>
+          {contradictionCount > 0 && (
+            <span className="px-1 rounded-full text-[9px] font-mono bg-[#d9534f]/85 text-white">
+              {contradictionCount}
+            </span>
+          )}
+        </button>
+
+        <button
+          onClick={() => setActiveView('communities')}
+          className={`px-2.5 py-1 rounded-full text-[11px] font-medium flex items-center gap-1 whitespace-nowrap transition-all cursor-pointer ${
+            activeView === 'communities'
+              ? 'bg-gradient-to-r from-[#7ba7bc]/25 to-[#e5b869]/20 text-[#f3efe6] border border-[#7ba7bc]/50'
+              : 'text-zinc-400 hover:text-zinc-200 hover:bg-white/5'
+          }`}
+        >
+          <Orbit className="w-3 h-3 text-[#7ba7bc]" />
+          <span>Clusters ({communityCount})</span>
+        </button>
+
+        <button
+          onClick={() => setActiveView('vault')}
+          className={`px-2.5 py-1 rounded-full text-[11px] font-medium flex items-center gap-1 whitespace-nowrap transition-all cursor-pointer ${
+            activeView === 'vault'
+              ? 'bg-gradient-to-r from-[#e5b869]/25 to-[#95c687]/20 text-[#f3efe6] border border-[#e5b869]/50'
+              : 'text-zinc-400 hover:text-zinc-200 hover:bg-white/5'
+          }`}
+        >
+          <BookOpen className="w-3 h-3 text-[#e5b869]" />
+          <span>Vault</span>
+        </button>
+      </nav>
+
+      {/* Right: Compact Search + LLM Switch + Upload */}
+      <div className="flex items-center gap-1.5 shrink-0">
+        <div ref={searchWrapRef} className="relative w-28 sm:w-40 md:w-48">
+          <div className="relative flex items-center">
+            <Search className="absolute left-2.5 w-3 h-3 text-zinc-400 pointer-events-none" />
+            <input
+              type="text"
+              value={searchQuery}
+              onFocus={() => setDropdownOpen(true)}
+              onChange={(e) => {
+                setSearchQuery(e.target.value)
+                setDropdownOpen(true)
+              }}
+              placeholder="Search node..."
+              className="w-full pl-7 pr-5 py-1 rounded-full glass-panel-subtle text-[11px] font-mono text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:border-[#e5b869]/60 transition-all"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => {
+                  setSearchQuery('')
+                  setResults([])
+                }}
+                className="absolute right-2 text-xs text-zinc-400 hover:text-white cursor-pointer"
+              >
+                ×
+              </button>
+            )}
+          </div>
+
+          {dropdownOpen && results.length > 0 && (
+            <div className="absolute top-full right-0 w-64 mt-1.5 rounded-2xl glass-panel border border-[#e5b869]/20 shadow-[0_16px_48px_rgba(0,0,0,0.85)] overflow-hidden z-50 py-1">
+              {results.map((item) => {
+                const color = NODE_TYPE_COLORS[item.type] || '#e5b869'
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      onSelectSearchResult(item.id, item.name)
+                      setDropdownOpen(false)
+                    }}
+                    className="w-full px-3 py-1.5 text-left hover:bg-white/10 flex items-center justify-between gap-2 transition-colors cursor-pointer"
+                  >
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span
+                        className="w-2 h-2 rounded-full shrink-0"
+                        style={{ backgroundColor: color }}
+                      />
+                      <span className="text-xs font-medium text-[#f3efe6] truncate">
+                        {item.name}
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-mono text-zinc-400 shrink-0">
+                      {item.mentions}m
+                    </span>
+                  </button>
+                )
+              })}
+            </div>
           )}
         </div>
-      </div>
 
-      {/* Primary Navigation Views & Actions */}
-      <div className="flex items-center gap-2.5 shrink-0">
-        {/* Navigation Tabs */}
-        <div className="flex items-center p-1 rounded-full glass-panel border border-white/10 shadow-lg">
-          <button
-            onClick={() => setActiveView('graph')}
-            className={`px-3.5 py-1.5 rounded-full text-xs font-medium flex items-center gap-1.5 whitespace-nowrap transition-all ${
-              activeView === 'graph'
-                ? 'bg-gradient-to-r from-[#ff2d9b]/20 to-[#00f0ff]/20 text-white border border-[#00f0ff]/40 shadow-[0_0_15px_rgba(0,240,255,0.2)]'
-                : 'text-zinc-400 hover:text-zinc-200 hover:bg-white/5'
-            }`}
-          >
-            <Activity className="w-3.5 h-3.5 text-[#00f0ff]" />
-            <span>Graph</span>
-          </button>
+        <button
+          onClick={onOpenLLMModal}
+          className="px-2.5 py-1 rounded-full glass-panel-subtle border border-white/15 hover:border-[#e5b869]/50 text-[11px] font-mono text-zinc-200 hover:text-white flex items-center gap-1 transition-all cursor-pointer"
+          title="Configure Local Ollama or Cloud LLM Router"
+        >
+          <Radio className="w-3 h-3 text-[#5ec2a8]" />
+          <span className="hidden sm:inline">{llmLabel}</span>
+        </button>
 
-          <button
-            onClick={() => setActiveView('query')}
-            className={`px-3.5 py-1.5 rounded-full text-xs font-medium flex items-center gap-1.5 whitespace-nowrap transition-all ${
-              activeView === 'query'
-                ? 'bg-gradient-to-r from-[#ff2d9b]/20 to-[#00f0ff]/20 text-white border border-[#00f0ff]/40 shadow-[0_0_15px_rgba(0,240,255,0.2)]'
-                : 'text-zinc-400 hover:text-zinc-200 hover:bg-white/5'
-            }`}
-          >
-            <Sparkles className="w-3.5 h-3.5 text-[#ff2d9b]" />
-            <span>Ask Ariadne</span>
-          </button>
-
-          <button
-            onClick={() => setActiveView('vault')}
-            className={`px-3.5 py-1.5 rounded-full text-xs font-medium flex items-center gap-1.5 whitespace-nowrap transition-all ${
-              activeView === 'vault'
-                ? 'bg-gradient-to-r from-[#ff2d9b]/20 to-[#00f0ff]/20 text-white border border-[#00f0ff]/40 shadow-[0_0_15px_rgba(0,240,255,0.2)]'
-                : 'text-zinc-400 hover:text-zinc-200 hover:bg-white/5'
-            }`}
-          >
-            <BookOpen className="w-3.5 h-3.5 text-[#00ff88]" />
-            <span>Documents</span>
-          </button>
-
-          <button
-            onClick={() => setActiveView('contradictions')}
-            className={`px-3.5 py-1.5 rounded-full text-xs font-medium flex items-center gap-1.5 whitespace-nowrap transition-all relative ${
-              activeView === 'contradictions'
-                ? 'bg-[#ff1744]/20 text-[#ff6e84] border border-[#ff1744]/40 shadow-[0_0_15px_rgba(255,23,68,0.25)]'
-                : 'text-zinc-400 hover:text-[#ff6e84] hover:bg-white/5'
-            }`}
-          >
-            <AlertTriangle className="w-3.5 h-3.5 text-[#ff1744]" />
-            <span>Contradictions</span>
-            {contradictionCount > 0 && (
-              <span className="ml-0.5 px-1.5 py-0.2 rounded-full text-[9px] font-mono bg-[#ff1744] text-white">
-                {contradictionCount}
-              </span>
-            )}
-          </button>
-        </div>
-
-        {/* Upload Source Action */}
         <button
           onClick={onUploadClick}
-          className="px-4 py-2 rounded-full bg-gradient-to-r from-[#ff2d9b] to-[#00f0ff] hover:opacity-95 active:scale-95 text-white font-medium text-xs flex items-center gap-2 whitespace-nowrap shadow-[0_0_20px_rgba(255,45,155,0.4)] transition-all cursor-pointer"
+          className="px-2.5 py-1 rounded-full bg-gradient-to-r from-[#e5b869] to-[#c8963e] hover:opacity-95 text-[#080a0a] font-semibold text-[11px] flex items-center gap-1 whitespace-nowrap cursor-pointer shadow-[0_0_16px_rgba(229,184,105,0.28)]"
+          title="Upload Document"
         >
-          <Upload className="w-3.5 h-3.5" />
-          <span>Upload Source</span>
+          <Upload className="w-3 h-3" />
+          <span className="hidden md:inline">Upload</span>
         </button>
       </div>
     </header>

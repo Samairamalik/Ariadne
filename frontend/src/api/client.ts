@@ -247,8 +247,8 @@ export const queryApi = {
       generate: params.generate ?? true,
       rerank: params.rerank ?? true,
       use_graph: params.use_graph ?? true,
-      verify_claims: params.verify_claims ?? true,
-      general_knowledge: params.general_knowledge ?? false,
+      verify_claims: params.verify_claims ?? false,
+      general_knowledge: params.general_knowledge ?? true,
     })
     return res.data
   },
